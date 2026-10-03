@@ -1,31 +1,21 @@
-# GS Agenda — MVP Android nativo
+# GS Agenda 2.0
 
-Primera base funcional en Kotlin + Jetpack Compose.
+Tablero personal de tareas, híbrido: la misma interfaz funciona como app Android (APK) y como app de escritorio en Edge.
 
-## Incluido
-- Crear y editar tareas.
-- Fecha y hora.
-- Prioridad Alta / Media / Baja.
-- Estado Pendiente / En progreso / En espera / Completada.
-- Recordatorios 1 hora y 30 minutos antes + aviso a la hora.
-- Notificaciones sonoras y vibración.
-- Acciones desde la notificación: **Lista** y **Posponer 30 min**.
-- Reprogramación de recordatorios al reiniciar el teléfono.
-- Dictado por voz mediante el reconocimiento de voz de Android.
-- Comandos de voz básicos para prioridad, estado y repetición.
-- Datos locales en el teléfono (sin servidor).
+## Qué incluye
+- Tablero interactivo tipo Power BI: indicadores, gráficos por estado, prioridad y categoría, carga de los próximos 14 días y ritmo semanal. Al tocar un gráfico se filtra todo el tablero.
+- Plan de trabajo diario: ordena lo vencido, lo de hoy y lo prioritario dentro de tu jornada, con aviso cada mañana.
+- Tareas con categoría, tiempo estimado, subtareas, repetición (diaria, semanal, mensual) y avisos configurables.
+- Calendario mensual.
+- Solicitudes del correo: Power Automate deja los correos marcados en OneDrive y la app los convierte en tareas.
+- Acceso con clave (y huella en el celular). Los datos se cifran con la clave (AES-256).
+- Sincronización entre celular y PC mediante un archivo cifrado en tu OneDrive.
+- Exportación a CSV para Excel o Power BI y copias de seguridad.
+- Tema claro y oscuro.
 
-## Abrir
-1. Abrir la carpeta `GSAgenda` en Android Studio actual.
-2. Esperar sincronización de Gradle.
-3. Ejecutar en un Android 8+.
-4. Conceder permiso de notificaciones cuando la app lo solicite.
-5. En Android 12+, si se desean avisos exactos al minuto, permitir `Alarmas y recordatorios` para GS Agenda en ajustes del sistema.
+## Estructura
+- `app/src/main/assets/web/` — la interfaz (HTML, CSS, JS). Es la misma para el celular y el PC.
+- `app/src/main/java/...` — el contenedor Android: WebView, huella, notificaciones, plan diario y archivo de sincronización.
+- `.github/workflows/android.yml` — compila el APK en GitHub Actions.
 
-## Pendiente para la siguiente iteración
-- Motor completo de recurrencia (crear automáticamente la siguiente ocurrencia semanal/mensual).
-- Interpretación avanzada del dictado: fechas, horas y recordatorios hablados.
-- Calendario mensual visual.
-- Respaldo/restauración exportable.
-- Pantalla de configuración de sonido por tarea/categoría.
-- Icono final GS Agenda y pulido visual conforme al mockup aprobado.
+Las instrucciones de instalación y del flujo de correo están en `GUIA.md`.

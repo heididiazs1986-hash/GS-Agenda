@@ -1,234 +1,421 @@
 package com.heidi.gsagenda
 
 import android.Manifest
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.app.AlarmManager
+import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.content.res.Configuration
+import android.graphics.Color
+import android.hardware.biometrics.BiometricManager
+import android.hardware.biometrics.BiometricPrompt
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.CancellationSignal
+import android.provider.Settings
 import android.speech.RecognizerIntent
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import com.heidi.gsagenda.data.*
+import android.view.ViewGroup
+import android.webkit.JavascriptInterface
+import android.webkit.WebResourceRequest
+import android.webkit.WebResourceResponse
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.FrameLayout
+import android.widget.Toast
+import android.window.OnBackInvokedDispatcher
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import com.heidi.gsagenda.data.SyncFile
+import com.heidi.gsagenda.data.TaskStore
 import com.heidi.gsagenda.notifications.NotificationHelper
 import com.heidi.gsagenda.notifications.ReminderScheduler
-import java.text.SimpleDateFormat
-import java.util.*
+import org.json.JSONObject
+import java.io.ByteArrayInputStream
+import java.io.IOException
 
-private val Purple = Color(0xFF6E42D8)
+/**
+ * GS Agenda híbrida: la interfaz (HTML/JS en assets/web) corre dentro de un WebView
+ * y este código le da acceso a funciones del teléfono.
+ */
+class MainActivity : Activity() {
 
-class MainActivity : ComponentActivity() {
+    companion object {
+        private const val HOST = "appassets.androidplatform.net"
+        private const val ORIGIN = "https://$HOST"
+        private const val NAVY = "#142033"
+        private const val RC_VOICE = 11
+        private const val RC_OPEN_SYNC = 12
+        private const val RC_CREATE_SYNC = 13
+        private const val RC_SAVE = 14
+        private const val RC_BACKUP = 15
+        private const val RC_NOTIF = 21
+    }
+
+    private lateinit var web: WebView
+    private lateinit var root: FrameLayout
+    private var pendingSave: String? = null
+
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         NotificationHelper.ensureChannels(this)
-        setContent { GSAgendaApp() }
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        root = FrameLayout(this)
+        root.setBackgroundColor(Color.parseColor(NAVY))
+        web = WebView(this)
+        root.addView(web, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
+        setContentView(root)
+
+        // Respeta barra de estado, barra de navegación y teclado
+        ViewCompat.setOnApplyWindowInsetsListener(root) { v, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout())
+            val ime = insets.getInsets(WindowInsetsCompat.Type.ime())
+            v.setPadding(bars.left, bars.top, bars.right, maxOf(bars.bottom, ime.bottom))
+            WindowInsetsCompat.CONSUMED
+        }
+        applyBars(NAVY, true)
+
+        web.settings.javaScriptEnabled = true
+        web.settings.domStorageEnabled = true
+        web.settings.allowFileAccess = false
+        web.settings.allowContentAccess = false
+        web.settings.setSupportZoom(false)
+        web.settings.textZoom = 100
+        web.isVerticalScrollBarEnabled = false
+        web.setBackgroundColor(Color.parseColor(NAVY))
+        web.webViewClient = AssetClient()
+        web.addJavascriptInterface(Bridge(), "GSNative")
+
+        val view = intent?.getStringExtra("view")
+        val hash = if (view.isNullOrBlank()) "" else "#$view"
+        web.loadUrl("$ORIGIN/web/index.html$hash")
+
+        if (Build.VERSION.SDK_INT >= 33) {
+            onBackInvokedDispatcher.registerOnBackInvokedCallback(OnBackInvokedDispatcher.PRIORITY_DEFAULT) { handleBack() }
+        }
+        ReminderScheduler.scheduleAll(this)
     }
-}
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun GSAgendaApp() {
-    val context = LocalContext.current
-    val store = remember { TaskStore(context) }
-    var tasks by remember { mutableStateOf(store.all()) }
-    var editing by remember { mutableStateOf<Task?>(null) }
+    /** Sirve los archivos de assets/ bajo una dirección https local (necesaria para el cifrado del navegador). */
+    private inner class AssetClient : WebViewClient() {
+        override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? {
+            val url = request.url
+            if (url.host != HOST) return null
+            var path = (url.path ?: "/").removePrefix("/")
+            if (path.isEmpty() || path.endsWith("/")) path += "index.html"
+            return try {
+                WebResourceResponse(mimeFor(path), "utf-8", assets.open(path))
+            } catch (e: IOException) {
+                WebResourceResponse("text/plain", "utf-8", 404, "Not Found", emptyMap(), ByteArrayInputStream(ByteArray(0)))
+            }
+        }
 
-    val notificationPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { }
-    LaunchedEffect(Unit) { notificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS) }
+        override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
+            if (request.url.host == HOST) return false
+            openExternal(request.url.toString())
+            return true
+        }
+    }
 
-    MaterialTheme(colorScheme = lightColorScheme(primary = Purple, secondary = Color(0xFF8C6CE7), background = Color(0xFFF8F6FC))) {
-        Scaffold(
-            topBar = { TopAppBar(title = { Text("GS Agenda", fontWeight = FontWeight.Bold) }) },
-            floatingActionButton = { FloatingActionButton(onClick = { editing = newTask() }, containerColor = Purple) { Icon(Icons.Default.Add, null, tint = Color.White) } }
-        ) { padding ->
-            Column(Modifier.padding(padding).padding(16.dp)) {
-                Text("¡Buenos días, Heidi! 👋", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-                Spacer(Modifier.height(14.dp))
-                SummaryRow(tasks)
-                Spacer(Modifier.height(18.dp))
-                Text("Tus tareas", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
-                Spacer(Modifier.height(8.dp))
-                LazyColumn(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    items(tasks.sortedBy { it.dueAt }, key = { it.id }) { task ->
-                        TaskCard(task, onEdit = { editing = task.copy(remindersMinutesBefore = task.remindersMinutesBefore.toMutableList()) }, onDone = {
-                            task.status = TaskStatus.COMPLETED; store.upsert(task); tasks = store.all()
-                        })
+    private fun mimeFor(path: String): String = when (path.substringAfterLast('.', "").lowercase()) {
+        "html" -> "text/html"
+        "css" -> "text/css"
+        "js" -> "application/javascript"
+        "svg" -> "image/svg+xml"
+        "json", "webmanifest" -> "application/json"
+        "png" -> "image/png"
+        else -> "application/octet-stream"
+    }
+
+    /** Envía un evento a la interfaz: window.__gsNative(nombre, datos) */
+    private fun js(name: String, payloadJson: String) {
+        runOnUiThread {
+            web.evaluateJavascript("window.__gsNative && window.__gsNative(${JSONObject.quote(name)}, $payloadJson)", null)
+        }
+    }
+
+    private fun handleBack() {
+        web.evaluateJavascript("(window.GS_onBack && window.GS_onBack()) ? 'y' : 'n'") { r ->
+            if (r != "\"y\"") moveTaskToBack(true)
+        }
+    }
+
+    @Deprecated("Solo se usa antes de Android 13")
+    override fun onBackPressed() {
+        handleBack()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        js("pause", "null")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        js("resume", "null")
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        val view = intent.getStringExtra("view")
+        if (view != null) js("open", JSONObject.quote(view))
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        js("theme", "null")
+    }
+
+    @Suppress("DEPRECATION")
+    private fun applyBars(color: String, dark: Boolean) {
+        val c = try { Color.parseColor(color) } catch (e: Exception) { Color.parseColor(NAVY) }
+        root.setBackgroundColor(c)
+        if (Build.VERSION.SDK_INT < 35) {
+            window.statusBarColor = c
+            window.navigationBarColor = c
+        }
+        val ctl = WindowCompat.getInsetsController(window, window.decorView)
+        ctl.isAppearanceLightStatusBars = !dark
+        ctl.isAppearanceLightNavigationBars = !dark
+    }
+
+    private fun openExternal(url: String) {
+        if (!url.startsWith("https://") && !url.startsWith("http://")) return
+        try {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+        } catch (e: ActivityNotFoundException) {
+            toast("No hay una app para abrir el enlace")
+        }
+    }
+
+    private fun toast(msg: String) {
+        runOnUiThread { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
+    }
+
+    @Suppress("DEPRECATION")
+    private fun hasBiometric(): Boolean {
+        if (Build.VERSION.SDK_INT < 28) return false
+        if (Build.VERSION.SDK_INT >= 30) {
+            val bm = getSystemService(BiometricManager::class.java) ?: return false
+            return bm.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_WEAK) == BiometricManager.BIOMETRIC_SUCCESS
+        }
+        if (Build.VERSION.SDK_INT >= 29) {
+            val bm = getSystemService(BiometricManager::class.java) ?: return false
+            return bm.canAuthenticate() == BiometricManager.BIOMETRIC_SUCCESS
+        }
+        return packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)
+    }
+
+    private fun showBiometric() {
+        if (Build.VERSION.SDK_INT < 28) {
+            js("biometric", "false")
+            return
+        }
+        val exec = mainExecutor
+        val prompt = BiometricPrompt.Builder(this)
+            .setTitle("Desbloquear GS Agenda")
+            .setSubtitle("Usa tu huella")
+            .setNegativeButton("Usar clave", exec) { _, _ -> js("biometric", "false") }
+            .build()
+        prompt.authenticate(CancellationSignal(), exec, object : BiometricPrompt.AuthenticationCallback() {
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                js("biometric", "true")
+            }
+
+            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                js("biometric", "false")
+            }
+        })
+    }
+
+    private fun secretPrefs() = getSharedPreferences("gs_secret", MODE_PRIVATE)
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val uri = data?.data
+        when (requestCode) {
+            RC_VOICE -> {
+                val text = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)?.firstOrNull()
+                if (resultCode == RESULT_OK && !text.isNullOrBlank()) js("voice", JSONObject.quote(text))
+            }
+            RC_OPEN_SYNC, RC_CREATE_SYNC -> {
+                if (resultCode == RESULT_OK && uri != null) {
+                    val name = SyncFile.set(this, uri)
+                    js("syncFile", JSONObject().put("ok", true).put("name", name).toString())
+                } else {
+                    js("syncFile", JSONObject().put("ok", false).toString())
+                }
+            }
+            RC_SAVE -> {
+                val content = pendingSave
+                pendingSave = null
+                if (resultCode == RESULT_OK && uri != null && content != null) {
+                    Thread { js("saved", if (SyncFile.writeUri(this, uri, content)) "true" else "false") }.start()
+                }
+            }
+            RC_BACKUP -> {
+                if (resultCode == RESULT_OK && uri != null) {
+                    Thread { js("backup", JSONObject.quote(SyncFile.readUri(this, uri) ?: "")) }.start()
+                }
+            }
+        }
+    }
+
+    private fun launch(intent: Intent, code: Int, errorMsg: String) {
+        try {
+            startActivityForResult(intent, code)
+        } catch (e: ActivityNotFoundException) {
+            toast(errorMsg)
+        }
+    }
+
+    /** Funciones del teléfono que la interfaz puede llamar como window.GSNative.xxx() */
+    inner class Bridge {
+        private val act: MainActivity get() = this@MainActivity
+
+        @JavascriptInterface
+        fun platform(): String = "android"
+
+        @JavascriptInterface
+        fun loadState(): String = TaskStore(act).raw()
+
+        @JavascriptInterface
+        fun saveState(json: String) {
+            TaskStore(act).saveRaw(json)
+            ReminderScheduler.scheduleAll(act)
+        }
+
+        @JavascriptInterface
+        fun syncFileName(): String = SyncFile.name(act)
+
+        @JavascriptInterface
+        fun readSyncFile(): String = SyncFile.read(act)
+
+        @JavascriptInterface
+        fun writeSyncFile(text: String): Boolean = SyncFile.write(act, text)
+
+        @JavascriptInterface
+        fun disconnectSyncFile() {
+            SyncFile.clear(act)
+        }
+
+        @JavascriptInterface
+        fun pickSyncFile(create: Boolean) {
+            runOnUiThread {
+                val flags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION
+                val i = if (create) {
+                    Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                        addCategory(Intent.CATEGORY_OPENABLE)
+                        type = "application/octet-stream"
+                        putExtra(Intent.EXTRA_TITLE, "gs-agenda.datos")
+                        addFlags(flags)
+                    }
+                } else {
+                    Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                        addCategory(Intent.CATEGORY_OPENABLE)
+                        type = "*/*"
+                        addFlags(flags)
                     }
                 }
+                launch(i, if (create) RC_CREATE_SYNC else RC_OPEN_SYNC, "No se encontró un selector de archivos")
             }
         }
 
-        editing?.let { task ->
-            TaskEditor(task = task, onDismiss = { editing = null }, onSave = { saved ->
-                store.upsert(saved)
-                ReminderScheduler.scheduleTask(context, saved)
-                tasks = store.all()
-                editing = null
-            })
-        }
-    }
-}
-
-@Composable
-private fun SummaryRow(tasks: List<Task>) {
-    val pending = tasks.count { it.status != TaskStatus.COMPLETED }
-    val done = tasks.count { it.status == TaskStatus.COMPLETED }
-    val overdue = tasks.count { it.status != TaskStatus.COMPLETED && it.dueAt < System.currentTimeMillis() }
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        SummaryChip("Pendientes", pending, Color(0xFFFFF2CC), Modifier.weight(1f))
-        SummaryChip("Listas", done, Color(0xFFDFF4E5), Modifier.weight(1f))
-        SummaryChip("Vencidas", overdue, Color(0xFFFFE1E1), Modifier.weight(1f))
-    }
-}
-
-@Composable
-private fun SummaryChip(label: String, count: Int, color: Color, modifier: Modifier) {
-    Card(modifier, colors = CardDefaults.cardColors(containerColor = color), shape = RoundedCornerShape(16.dp)) {
-        Column(Modifier.padding(12.dp)) { Text(label, style = MaterialTheme.typography.labelMedium); Text("$count", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold) }
-    }
-}
-
-@Composable
-private fun TaskCard(task: Task, onEdit: () -> Unit, onDone: () -> Unit) {
-    val priorityText = when(task.priority) { Priority.HIGH -> "🔴 Alta"; Priority.MEDIUM -> "🟠 Media"; Priority.LOW -> "🟢 Baja" }
-    val fmt = remember { SimpleDateFormat("EEE d MMM · h:mm a", Locale("es", "CO")) }
-    Card(onClick = onEdit, shape = RoundedCornerShape(18.dp)) {
-        Row(Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
-            Column(Modifier.weight(1f)) {
-                Text(task.title, fontWeight = FontWeight.SemiBold)
-                Text(fmt.format(Date(task.dueAt)), style = MaterialTheme.typography.bodySmall)
-                Text(priorityText, style = MaterialTheme.typography.labelMedium)
+        @JavascriptInterface
+        fun startVoice() {
+            runOnUiThread {
+                val i = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                    putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+                    putExtra(RecognizerIntent.EXTRA_LANGUAGE, "es-CO")
+                    putExtra(RecognizerIntent.EXTRA_PROMPT, "Di la tarea, la fecha y la prioridad")
+                }
+                launch(i, RC_VOICE, "El dictado por voz no está disponible en este teléfono")
             }
-            if (task.status != TaskStatus.COMPLETED) IconButton(onClick = onDone) { Icon(Icons.Default.CheckCircle, "Lista", tint = Purple) }
-            else Icon(Icons.Default.DoneAll, null, tint = Color(0xFF2E9D58))
         }
-    }
-}
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun TaskEditor(task: Task, onDismiss: () -> Unit, onSave: (Task) -> Unit) {
-    val context = LocalContext.current
-    var title by remember { mutableStateOf(task.title) }
-    var notes by remember { mutableStateOf(task.notes) }
-    var dueAt by remember { mutableLongStateOf(task.dueAt) }
-    var priority by remember { mutableStateOf(task.priority) }
-    var status by remember { mutableStateOf(task.status) }
-    var repeat by remember { mutableStateOf(task.repeatType) }
-    var rem60 by remember { mutableStateOf(task.remindersMinutesBefore.contains(60)) }
-    var rem30 by remember { mutableStateOf(task.remindersMinutesBefore.contains(30)) }
-    var sound by remember { mutableStateOf(task.sound) }
-    var vibration by remember { mutableStateOf(task.vibration) }
+        @JavascriptInterface
+        fun canBiometric(): Boolean = act.hasBiometric()
 
-    val speech = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        val text = result.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)?.firstOrNull().orEmpty()
-        if (text.isNotBlank()) {
-            val parsed = parseVoice(text)
-            if (parsed.cleanedText.isNotBlank()) title = parsed.cleanedText
-            parsed.priority?.let { priority = it }
-            parsed.status?.let { status = it }
-            parsed.repeat?.let { repeat = it }
+        @JavascriptInterface
+        fun biometric() {
+            runOnUiThread { showBiometric() }
         }
-    }
 
-    fun startVoice() {
-        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE, "es-CO")
-            putExtra(RecognizerIntent.EXTRA_PROMPT, "Dime la tarea o un cambio: prioridad alta, completada, repetir semanalmente…")
+        @JavascriptInterface
+        fun secretSet(key: String, value: String) {
+            secretPrefs().edit().putString(key, value).apply()
         }
-        speech.launch(intent)
-    }
 
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text(if (task.title.isBlank()) "Nueva tarea" else "Editar tarea") },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                OutlinedTextField(title, { title = it }, label = { Text("Título") }, modifier = Modifier.fillMaxWidth(), trailingIcon = { IconButton(onClick = ::startVoice) { Icon(Icons.Default.Mic, "Dictar") } })
-                OutlinedTextField(notes, { notes = it }, label = { Text("Notas") }, modifier = Modifier.fillMaxWidth())
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(SimpleDateFormat("dd/MM/yyyy h:mm a", Locale("es", "CO")).format(Date(dueAt)), Modifier.weight(1f))
-                    IconButton(onClick = { pickDateTime(context, dueAt) { dueAt = it } }) { Icon(Icons.Default.CalendarMonth, "Fecha y hora") }
+        @JavascriptInterface
+        fun secretGet(key: String): String = secretPrefs().getString(key, "") ?: ""
+
+        @JavascriptInterface
+        fun saveFile(name: String, mime: String, content: String) {
+            runOnUiThread {
+                pendingSave = content
+                val i = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = mime
+                    putExtra(Intent.EXTRA_TITLE, name)
                 }
-                Text("Prioridad", fontWeight = FontWeight.SemiBold)
-                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    FilterChip(priority == Priority.HIGH, { priority = Priority.HIGH }, { Text("Alta") })
-                    FilterChip(priority == Priority.MEDIUM, { priority = Priority.MEDIUM }, { Text("Media") })
-                    FilterChip(priority == Priority.LOW, { priority = Priority.LOW }, { Text("Baja") })
-                }
-                Text("Estado", fontWeight = FontWeight.SemiBold)
-                StatusDropDown(status) { status = it }
-                Text("Repetir", fontWeight = FontWeight.SemiBold)
-                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    FilterChip(repeat == RepeatType.NONE, { repeat = RepeatType.NONE }, { Text("No") })
-                    FilterChip(repeat == RepeatType.WEEKLY, { repeat = RepeatType.WEEKLY }, { Text("Semanal") })
-                }
-                Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(rem60, { rem60 = it }); Text("Avisar 1 hora antes") }
-                Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(rem30, { rem30 = it }); Text("Avisar 30 minutos antes") }
-                Row(verticalAlignment = Alignment.CenterVertically) { Switch(sound, { sound = it }); Spacer(Modifier.width(8.dp)); Text("Notificación sonora") }
-                Row(verticalAlignment = Alignment.CenterVertically) { Switch(vibration, { vibration = it }); Spacer(Modifier.width(8.dp)); Text("Vibración") }
-                FilledTonalButton(onClick = ::startVoice, modifier = Modifier.fillMaxWidth()) { Icon(Icons.Default.Mic, null); Spacer(Modifier.width(6.dp)); Text("Editar por voz") }
+                launch(i, RC_SAVE, "No se encontró dónde guardar el archivo")
             }
-        },
-        confirmButton = {
-            Button(onClick = {
-                onSave(task.copy(title = title.ifBlank { "Nueva tarea" }, notes = notes, dueAt = dueAt, priority = priority, status = status, repeatType = repeat,
-                    remindersMinutesBefore = mutableListOf<Int>().apply { if (rem60) add(60); if (rem30) add(30) }, sound = sound, vibration = vibration))
-            }) { Text("Guardar") }
-        },
-        dismissButton = { TextButton(onClick = onDismiss) { Text("Cancelar") } }
-    )
-}
+        }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun StatusDropDown(status: TaskStatus, onChange: (TaskStatus) -> Unit) {
-    var open by remember { mutableStateOf(false) }
-    ExposedDropdownMenuBox(expanded = open, onExpandedChange = { open = !open }) {
-        OutlinedTextField(value = when(status){ TaskStatus.PENDING->"Pendiente";TaskStatus.IN_PROGRESS->"En progreso";TaskStatus.WAITING->"En espera";TaskStatus.COMPLETED->"Completada" }, onValueChange = {}, readOnly = true, modifier = Modifier.menuAnchor().fillMaxWidth(), trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) })
-        ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
-            TaskStatus.entries.forEach { s -> DropdownMenuItem(text = { Text(when(s){ TaskStatus.PENDING->"Pendiente";TaskStatus.IN_PROGRESS->"En progreso";TaskStatus.WAITING->"En espera";TaskStatus.COMPLETED->"Completada" }) }, onClick = { onChange(s); open = false }) }
+        @JavascriptInterface
+        fun openBackup() {
+            runOnUiThread {
+                val i = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = "*/*"
+                }
+                launch(i, RC_BACKUP, "No se encontró un selector de archivos")
+            }
+        }
+
+        @JavascriptInterface
+        fun setBars(color: String, dark: Boolean) {
+            runOnUiThread { applyBars(color, dark) }
+        }
+
+        @JavascriptInterface
+        fun openUrl(url: String) {
+            runOnUiThread { openExternal(url) }
+        }
+
+        @JavascriptInterface
+        fun isNightMode(): Boolean =
+            (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+
+        @JavascriptInterface
+        fun requestNotifications() {
+            runOnUiThread {
+                if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), RC_NOTIF)
+                }
+            }
+        }
+
+        @JavascriptInterface
+        fun openAlarmSettings() {
+            runOnUiThread {
+                val am = getSystemService(AlarmManager::class.java)
+                if (Build.VERSION.SDK_INT >= 31 && am != null && !am.canScheduleExactAlarms()) {
+                    try {
+                        startActivity(Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM, Uri.parse("package:$packageName")))
+                    } catch (e: ActivityNotFoundException) {
+                        toast("Abre Ajustes > Apps > GS Agenda > Alarmas y recordatorios")
+                    }
+                } else {
+                    toast("Los permisos de avisos están activos")
+                }
+            }
         }
     }
-}
-
-private fun newTask(): Task {
-    val c = Calendar.getInstance().apply { add(Calendar.HOUR_OF_DAY, 1); set(Calendar.MINUTE, 0); set(Calendar.SECOND, 0) }
-    return Task(title = "", dueAt = c.timeInMillis)
-}
-
-private fun pickDateTime(context: android.content.Context, initial: Long, onPicked: (Long) -> Unit) {
-    val c = Calendar.getInstance().apply { timeInMillis = initial }
-    DatePickerDialog(context, { _, y, m, d ->
-        TimePickerDialog(context, { _, h, min ->
-            val out = Calendar.getInstance().apply { set(y, m, d, h, min, 0) }
-            onPicked(out.timeInMillis)
-        }, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), false).show()
-    }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show()
-}
-
-data class VoiceParse(val cleanedText: String, val priority: Priority?, val status: TaskStatus?, val repeat: RepeatType?)
-private fun parseVoice(input: String): VoiceParse {
-    val s = input.lowercase(Locale("es", "CO"))
-    val p = when { "prioridad alta" in s -> Priority.HIGH; "prioridad media" in s -> Priority.MEDIUM; "prioridad baja" in s -> Priority.LOW; else -> null }
-    val st = when { "completada" in s || "lista" in s -> TaskStatus.COMPLETED; "en progreso" in s -> TaskStatus.IN_PROGRESS; "en espera" in s -> TaskStatus.WAITING; "pendiente" in s -> TaskStatus.PENDING; else -> null }
-    val r = when { "cada semana" in s || "semanal" in s || "todos los lunes" in s -> RepeatType.WEEKLY; "cada día" in s || "diaria" in s -> RepeatType.DAILY; else -> null }
-    val cleaned = input.replace(Regex("(?i)prioridad (alta|media|baja)"), "").replace(Regex("(?i)(completada|lista|en progreso|en espera|pendiente)"), "").replace(Regex("(?i)(cada semana|semanalmente|semanal|todos los lunes|cada día|diaria)"), "").trim(' ', ',', '.', '-')
-    return VoiceParse(cleaned, p, st, r)
 }

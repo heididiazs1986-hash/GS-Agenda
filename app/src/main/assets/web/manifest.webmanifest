@@ -1,0 +1,12 @@
+{
+  "name": "GS Agenda",
+  "short_name": "GS Agenda",
+  "description": "Tablero personal de tareas",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#142033",
+  "theme_color": "#142033",
+  "lang": "es-CO",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

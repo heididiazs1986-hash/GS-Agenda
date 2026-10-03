@@ -3,45 +3,78 @@ package com.heidi.gsagenda.data
 import android.content.Context
 import org.json.JSONArray
 import org.json.JSONObject
+import java.io.File
 
-class TaskStore(context: Context) {
-    private val prefs = context.getSharedPreferences("gs_agenda_tasks", Context.MODE_PRIVATE)
-
-    fun all(): MutableList<Task> {
-        val raw = prefs.getString("tasks", "[]") ?: "[]"
-        val arr = JSONArray(raw)
-        return MutableList(arr.length()) { i -> fromJson(arr.getJSONObject(i)) }
+/** Guarda el estado completo de la app (JSON) en el almacenamiento privado del teléfono. */
+class TaskStore(private val context: Context) {
+    companion object {
+        private val lock = Any()
     }
 
-    fun save(tasks: List<Task>) {
-        val arr = JSONArray()
-        tasks.forEach { arr.put(toJson(it)) }
-        prefs.edit().putString("tasks", arr.toString()).apply()
+    private val file: File get() = File(context.filesDir, "state.json")
+
+    fun raw(): String = synchronized(lock) {
+        try { if (file.exists()) file.readText(Charsets.UTF_8) else "" } catch (e: Exception) { "" }
     }
 
-    fun get(id: Long): Task? = all().firstOrNull { it.id == id }
-
-    fun upsert(task: Task) {
-        val tasks = all()
-        val index = tasks.indexOfFirst { it.id == task.id }
-        if (index >= 0) tasks[index] = task else tasks.add(task)
-        save(tasks)
+    fun saveRaw(json: String) {
+        synchronized(lock) {
+            if (json.isBlank()) {
+                file.delete()
+            } else {
+                val tmp = File(context.filesDir, "state.json.tmp")
+                tmp.writeText(json, Charsets.UTF_8)
+                if (!tmp.renameTo(file)) {
+                    file.writeText(json, Charsets.UTF_8)
+                    tmp.delete()
+                }
+            }
+            Unit
+        }
     }
 
-    private fun toJson(t: Task) = JSONObject().apply {
-        put("id", t.id); put("title", t.title); put("notes", t.notes); put("dueAt", t.dueAt)
-        put("priority", t.priority.name); put("status", t.status.name); put("repeatType", t.repeatType.name)
-        put("repeatWeekday", t.repeatWeekday ?: JSONObject.NULL)
-        put("reminders", JSONArray(t.remindersMinutesBefore)); put("sound", t.sound); put("vibration", t.vibration)
+    private fun root(): JSONObject? = try { val r = raw(); if (r.isBlank()) null else JSONObject(r) } catch (e: Exception) { null }
+
+    fun settings(): JSONObject = root()?.optJSONObject("settings") ?: JSONObject()
+
+    fun tasks(): List<Task> {
+        val arr = root()?.optJSONArray("tasks") ?: return emptyList()
+        val out = ArrayList<Task>(arr.length())
+        for (i in 0 until arr.length()) {
+            val o = arr.optJSONObject(i) ?: continue
+            val rem = o.optJSONArray("reminders") ?: JSONArray()
+            out.add(
+                Task(
+                    id = o.optString("id"),
+                    title = o.optString("title", "Tarea"),
+                    notes = o.optString("notes", ""),
+                    dueAt = o.optLong("dueAt", 0L),
+                    status = o.optString("status", "PENDING"),
+                    priority = o.optString("priority", "MEDIUM"),
+                    reminders = List(rem.length()) { rem.optInt(it, 0) },
+                    sound = o.optBoolean("sound", true),
+                    vibration = o.optBoolean("vibration", true),
+                    deleted = o.optBoolean("deleted", false)
+                )
+            )
+        }
+        return out
     }
 
-    private fun fromJson(o: JSONObject) = Task(
-        id = o.getLong("id"), title = o.getString("title"), notes = o.optString("notes"), dueAt = o.getLong("dueAt"),
-        priority = Priority.valueOf(o.optString("priority", Priority.MEDIUM.name)),
-        status = TaskStatus.valueOf(o.optString("status", TaskStatus.PENDING.name)),
-        repeatType = RepeatType.valueOf(o.optString("repeatType", RepeatType.NONE.name)),
-        repeatWeekday = if (o.isNull("repeatWeekday")) null else o.optInt("repeatWeekday"),
-        remindersMinutesBefore = MutableList(o.optJSONArray("reminders")?.length() ?: 0) { i -> o.getJSONArray("reminders").getInt(i) },
-        sound = o.optBoolean("sound", true), vibration = o.optBoolean("vibration", true)
-    )
+    /** Marca una tarea como lista desde la notificación, conservando el resto de campos. */
+    fun markDone(id: String): Boolean = synchronized(lock) {
+        val r = root() ?: return@synchronized false
+        val arr = r.optJSONArray("tasks") ?: return@synchronized false
+        val now = System.currentTimeMillis()
+        for (i in 0 until arr.length()) {
+            val o = arr.optJSONObject(i) ?: continue
+            if (o.optString("id") == id) {
+                o.put("status", "COMPLETED"); o.put("completedAt", now); o.put("updatedAt", now)
+                r.put("updatedAt", now)
+                saveRaw(r.toString())
+                return@synchronized true
+            }
+        }
+        false
+    }
 }
