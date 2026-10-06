@@ -1,0 +1,313 @@
+﻿Fecha,Día,Fase,Semana,Tarea,Plataforma,Duración (min),Prioridad,Estado
+2026-10-07,Miércoles,Fase 1 · Python,1,"Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-08,Jueves,Fase 1 · Python,1,"Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-09,Viernes,Fase 1 · Python,1,"Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-10,Sábado,Fase 1 · Python,1,"Mini proyecto / práctica de la semana: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",GitHub / Colab,45,Media,Pendiente
+2026-10-12,Lunes,Fase 1 · Python,1,"Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-13,Martes,Fase 1 · Python,1,"Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-14,Miércoles,Fase 1 · Python,2,Estudiar: Python: cadenas de texto y entrada/salida,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-15,Jueves,Fase 1 · Python,2,Estudiar: Python: cadenas de texto y entrada/salida,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-16,Viernes,Fase 1 · Python,2,Estudiar: Python: cadenas de texto y entrada/salida,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-17,Sábado,Fase 1 · Python,2,Mini proyecto / práctica de la semana: Python: cadenas de texto y entrada/salida,GitHub / Colab,45,Media,Pendiente
+2026-10-19,Lunes,Fase 1 · Python,2,Estudiar: Python: cadenas de texto y entrada/salida,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-20,Martes,Fase 1 · Python,2,Estudiar: Python: cadenas de texto y entrada/salida,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-21,Miércoles,Fase 1 · Python,3,Estudiar: Python: condicionales (if/elif/else),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-22,Jueves,Fase 1 · Python,3,Estudiar: Python: condicionales (if/elif/else),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-23,Viernes,Fase 1 · Python,3,Estudiar: Python: condicionales (if/elif/else),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-24,Sábado,Fase 1 · Python,3,Mini proyecto / práctica de la semana: Python: condicionales (if/elif/else),GitHub / Colab,45,Media,Pendiente
+2026-10-26,Lunes,Fase 1 · Python,3,Estudiar: Python: condicionales (if/elif/else),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-27,Martes,Fase 1 · Python,3,Estudiar: Python: condicionales (if/elif/else),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-28,Miércoles,Fase 1 · Python,4,Estudiar: Python: bucles (for/while),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-29,Jueves,Fase 1 · Python,4,Estudiar: Python: bucles (for/while),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-30,Viernes,Fase 1 · Python,4,Estudiar: Python: bucles (for/while),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-10-31,Sábado,Fase 1 · Python,4,Mini proyecto / práctica de la semana: Python: bucles (for/while),GitHub / Colab,45,Media,Pendiente
+2026-11-02,Lunes,Fase 1 · Python,4,Estudiar: Python: bucles (for/while),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-03,Martes,Fase 1 · Python,4,Estudiar: Python: bucles (for/while),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-04,Miércoles,Fase 1 · Python,5,Estudiar: Python: listas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-05,Jueves,Fase 1 · Python,5,Estudiar: Python: listas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-06,Viernes,Fase 1 · Python,5,Estudiar: Python: listas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-07,Sábado,Fase 1 · Python,5,Mini proyecto / práctica de la semana: Python: listas,GitHub / Colab,45,Media,Pendiente
+2026-11-09,Lunes,Fase 1 · Python,5,Estudiar: Python: listas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-10,Martes,Fase 1 · Python,5,Estudiar: Python: listas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-11,Miércoles,Fase 1 · Python,6,Estudiar: Python: diccionarios y tuplas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-12,Jueves,Fase 1 · Python,6,Estudiar: Python: diccionarios y tuplas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-13,Viernes,Fase 1 · Python,6,Estudiar: Python: diccionarios y tuplas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-14,Sábado,Fase 1 · Python,6,Mini proyecto / práctica de la semana: Python: diccionarios y tuplas,GitHub / Colab,45,Media,Pendiente
+2026-11-16,Lunes,Fase 1 · Python,6,Estudiar: Python: diccionarios y tuplas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-17,Martes,Fase 1 · Python,6,Estudiar: Python: diccionarios y tuplas,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-18,Miércoles,Fase 1 · Python,7,Estudiar: Python: funciones,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-19,Jueves,Fase 1 · Python,7,Estudiar: Python: funciones,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-20,Viernes,Fase 1 · Python,7,Estudiar: Python: funciones,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-21,Sábado,Fase 1 · Python,7,Mini proyecto / práctica de la semana: Python: funciones,GitHub / Colab,45,Media,Pendiente
+2026-11-23,Lunes,Fase 1 · Python,7,Estudiar: Python: funciones,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-24,Martes,Fase 1 · Python,7,Estudiar: Python: funciones,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-25,Miércoles,Fase 1 · Python,8,Estudiar: Python: archivos y manejo de errores,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-26,Jueves,Fase 1 · Python,8,Estudiar: Python: archivos y manejo de errores,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-27,Viernes,Fase 1 · Python,8,Estudiar: Python: archivos y manejo de errores,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-11-28,Sábado,Fase 1 · Python,8,Mini proyecto / práctica de la semana: Python: archivos y manejo de errores,GitHub / Colab,45,Media,Pendiente
+2026-11-30,Lunes,Fase 1 · Python,8,Estudiar: Python: archivos y manejo de errores,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-01,Martes,Fase 1 · Python,8,Estudiar: Python: archivos y manejo de errores,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-02,Miércoles,Fase 1 · Python,9,Estudiar: Python: módulos y librerías,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-03,Jueves,Fase 1 · Python,9,Estudiar: Python: módulos y librerías,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-04,Viernes,Fase 1 · Python,9,Estudiar: Python: módulos y librerías,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-05,Sábado,Fase 1 · Python,9,Mini proyecto / práctica de la semana: Python: módulos y librerías,GitHub / Colab,45,Media,Pendiente
+2026-12-07,Lunes,Fase 1 · Python,9,Estudiar: Python: módulos y librerías,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-08,Martes,Fase 1 · Python,9,Estudiar: Python: módulos y librerías,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-09,Miércoles,Fase 1 · Python,10,Estudiar: Python: introducción a objetos y clases,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-10,Jueves,Fase 1 · Python,10,Estudiar: Python: introducción a objetos y clases,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-11,Viernes,Fase 1 · Python,10,Estudiar: Python: introducción a objetos y clases,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-12,Sábado,Fase 1 · Python,10,Mini proyecto / práctica de la semana: Python: introducción a objetos y clases,GitHub / Colab,45,Media,Pendiente
+2026-12-14,Lunes,Fase 1 · Python,10,Estudiar: Python: introducción a objetos y clases,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-15,Martes,Fase 1 · Python,10,Estudiar: Python: introducción a objetos y clases,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-16,Miércoles,Fase 1 · Python,11,Estudiar: Proyecto 1 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-17,Jueves,Fase 1 · Python,11,Estudiar: Proyecto 1 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-18,Viernes,Fase 1 · Python,11,Estudiar: Proyecto 1 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-19,Sábado,Fase 1 · Python,11,Mini proyecto / práctica de la semana: Proyecto 1 de la certificación de Python,GitHub / Colab,45,Media,Pendiente
+2026-12-21,Lunes,Fase 1 · Python,11,Estudiar: Proyecto 1 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-22,Martes,Fase 1 · Python,11,Estudiar: Proyecto 1 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-23,Miércoles,Fase 1 · Python,12,Estudiar: Proyecto 2 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-24,Jueves,Fase 1 · Python,12,Estudiar: Proyecto 2 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-25,Viernes,Fase 1 · Python,12,Estudiar: Proyecto 2 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-26,Sábado,Fase 1 · Python,12,Mini proyecto / práctica de la semana: Proyecto 2 de la certificación de Python,GitHub / Colab,45,Media,Pendiente
+2026-12-28,Lunes,Fase 1 · Python,12,Estudiar: Proyecto 2 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-29,Martes,Fase 1 · Python,12,Estudiar: Proyecto 2 de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-30,Miércoles,Fase 1 · Python,13,Estudiar: Repaso y examen final de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2026-12-31,Jueves,Fase 1 · Python,13,Estudiar: Repaso y examen final de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-01-01,Viernes,Fase 1 · Python,13,Estudiar: Repaso y examen final de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-01-02,Sábado,Fase 1 · Python,13,Mini proyecto / práctica de la semana: Repaso y examen final de la certificación de Python,GitHub / Colab,45,Media,Pendiente
+2027-01-04,Lunes,Fase 1 · Python,13,Estudiar: Repaso y examen final de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-01-05,Martes,Fase 1 · Python,13,Estudiar: Repaso y examen final de la certificación de Python,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-01-06,Miércoles,Fase 2 · Análisis de datos,14,Estudiar: Kaggle: curso Pandas (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-07,Jueves,Fase 2 · Análisis de datos,14,Estudiar: Kaggle: curso Pandas (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-08,Viernes,Fase 2 · Análisis de datos,14,Estudiar: Kaggle: curso Pandas (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-09,Sábado,Fase 2 · Análisis de datos,14,Mini proyecto / práctica de la semana: Kaggle: curso Pandas (parte 1),GitHub / Colab,45,Media,Pendiente
+2027-01-11,Lunes,Fase 2 · Análisis de datos,14,Estudiar: Kaggle: curso Pandas (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-12,Martes,Fase 2 · Análisis de datos,14,Estudiar: Kaggle: curso Pandas (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-13,Miércoles,Fase 2 · Análisis de datos,15,Estudiar: Kaggle: curso Pandas (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-14,Jueves,Fase 2 · Análisis de datos,15,Estudiar: Kaggle: curso Pandas (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-15,Viernes,Fase 2 · Análisis de datos,15,Estudiar: Kaggle: curso Pandas (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-16,Sábado,Fase 2 · Análisis de datos,15,Mini proyecto / práctica de la semana: Kaggle: curso Pandas (parte 2),GitHub / Colab,45,Media,Pendiente
+2027-01-18,Lunes,Fase 2 · Análisis de datos,15,Estudiar: Kaggle: curso Pandas (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-19,Martes,Fase 2 · Análisis de datos,15,Estudiar: Kaggle: curso Pandas (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-20,Miércoles,Fase 2 · Análisis de datos,16,Estudiar: Kaggle: Intro to SQL (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-21,Jueves,Fase 2 · Análisis de datos,16,Estudiar: Kaggle: Intro to SQL (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-22,Viernes,Fase 2 · Análisis de datos,16,Estudiar: Kaggle: Intro to SQL (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-23,Sábado,Fase 2 · Análisis de datos,16,Mini proyecto / práctica de la semana: Kaggle: Intro to SQL (parte 1),GitHub / Colab,45,Media,Pendiente
+2027-01-25,Lunes,Fase 2 · Análisis de datos,16,Estudiar: Kaggle: Intro to SQL (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-26,Martes,Fase 2 · Análisis de datos,16,Estudiar: Kaggle: Intro to SQL (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-27,Miércoles,Fase 2 · Análisis de datos,17,Estudiar: Kaggle: Intro to SQL (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-28,Jueves,Fase 2 · Análisis de datos,17,Estudiar: Kaggle: Intro to SQL (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-29,Viernes,Fase 2 · Análisis de datos,17,Estudiar: Kaggle: Intro to SQL (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-01-30,Sábado,Fase 2 · Análisis de datos,17,Mini proyecto / práctica de la semana: Kaggle: Intro to SQL (parte 2),GitHub / Colab,45,Media,Pendiente
+2027-02-01,Lunes,Fase 2 · Análisis de datos,17,Estudiar: Kaggle: Intro to SQL (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-02-02,Martes,Fase 2 · Análisis de datos,17,Estudiar: Kaggle: Intro to SQL (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-02-03,Miércoles,Fase 2 · Análisis de datos,18,Estudiar: Kaggle: Data Visualization,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-02-04,Jueves,Fase 2 · Análisis de datos,18,Estudiar: Kaggle: Data Visualization,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-02-05,Viernes,Fase 2 · Análisis de datos,18,Estudiar: Kaggle: Data Visualization,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-02-06,Sábado,Fase 2 · Análisis de datos,18,Mini proyecto / práctica de la semana: Kaggle: Data Visualization,GitHub / Colab,45,Media,Pendiente
+2027-02-08,Lunes,Fase 2 · Análisis de datos,18,Estudiar: Kaggle: Data Visualization,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-02-09,Martes,Fase 2 · Análisis de datos,18,Estudiar: Kaggle: Data Visualization,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-02-10,Miércoles,Fase 2 · Análisis de datos,19,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-11,Jueves,Fase 2 · Análisis de datos,19,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-12,Viernes,Fase 2 · Análisis de datos,19,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-13,Sábado,Fase 2 · Análisis de datos,19,Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: NumPy (parte 1),GitHub / Colab,45,Media,Pendiente
+2027-02-15,Lunes,Fase 2 · Análisis de datos,19,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-16,Martes,Fase 2 · Análisis de datos,19,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-17,Miércoles,Fase 2 · Análisis de datos,20,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-18,Jueves,Fase 2 · Análisis de datos,20,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-19,Viernes,Fase 2 · Análisis de datos,20,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-20,Sábado,Fase 2 · Análisis de datos,20,Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: NumPy (parte 2),GitHub / Colab,45,Media,Pendiente
+2027-02-22,Lunes,Fase 2 · Análisis de datos,20,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-23,Martes,Fase 2 · Análisis de datos,20,Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-24,Miércoles,Fase 2 · Análisis de datos,21,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-25,Jueves,Fase 2 · Análisis de datos,21,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-26,Viernes,Fase 2 · Análisis de datos,21,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-02-27,Sábado,Fase 2 · Análisis de datos,21,Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1),GitHub / Colab,45,Media,Pendiente
+2027-03-01,Lunes,Fase 2 · Análisis de datos,21,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-02,Martes,Fase 2 · Análisis de datos,21,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-03,Miércoles,Fase 2 · Análisis de datos,22,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-04,Jueves,Fase 2 · Análisis de datos,22,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-05,Viernes,Fase 2 · Análisis de datos,22,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-06,Sábado,Fase 2 · Análisis de datos,22,Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2),GitHub / Colab,45,Media,Pendiente
+2027-03-08,Lunes,Fase 2 · Análisis de datos,22,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-09,Martes,Fase 2 · Análisis de datos,22,Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-10,Miércoles,Fase 2 · Análisis de datos,23,Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-11,Jueves,Fase 2 · Análisis de datos,23,Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-12,Viernes,Fase 2 · Análisis de datos,23,Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-13,Sábado,Fase 2 · Análisis de datos,23,Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn,GitHub / Colab,45,Media,Pendiente
+2027-03-15,Lunes,Fase 2 · Análisis de datos,23,Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-16,Martes,Fase 2 · Análisis de datos,23,Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn,freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-17,Miércoles,Fase 2 · Análisis de datos,24,Estudiar: Proyectos de la certificación Data Analysis with Python (1-2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-18,Jueves,Fase 2 · Análisis de datos,24,Estudiar: Proyectos de la certificación Data Analysis with Python (1-2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-19,Viernes,Fase 2 · Análisis de datos,24,Estudiar: Proyectos de la certificación Data Analysis with Python (1-2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-20,Sábado,Fase 2 · Análisis de datos,24,Mini proyecto / práctica de la semana: Proyectos de la certificación Data Analysis with Python (1-2),GitHub / Colab,45,Media,Pendiente
+2027-03-22,Lunes,Fase 2 · Análisis de datos,24,Estudiar: Proyectos de la certificación Data Analysis with Python (1-2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-23,Martes,Fase 2 · Análisis de datos,24,Estudiar: Proyectos de la certificación Data Analysis with Python (1-2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-24,Miércoles,Fase 2 · Análisis de datos,25,Estudiar: Proyectos de la certificación Data Analysis with Python (3-5),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-25,Jueves,Fase 2 · Análisis de datos,25,Estudiar: Proyectos de la certificación Data Analysis with Python (3-5),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-26,Viernes,Fase 2 · Análisis de datos,25,Estudiar: Proyectos de la certificación Data Analysis with Python (3-5),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-27,Sábado,Fase 2 · Análisis de datos,25,Mini proyecto / práctica de la semana: Proyectos de la certificación Data Analysis with Python (3-5),GitHub / Colab,45,Media,Pendiente
+2027-03-29,Lunes,Fase 2 · Análisis de datos,25,Estudiar: Proyectos de la certificación Data Analysis with Python (3-5),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-30,Martes,Fase 2 · Análisis de datos,25,Estudiar: Proyectos de la certificación Data Analysis with Python (3-5),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-03-31,Miércoles,Fase 2 · Análisis de datos,26,Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-04-01,Jueves,Fase 2 · Análisis de datos,26,Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-04-02,Viernes,Fase 2 · Análisis de datos,26,Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-04-03,Sábado,Fase 2 · Análisis de datos,26,Mini proyecto / práctica de la semana: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso,GitHub / Colab,45,Media,Pendiente
+2027-04-05,Lunes,Fase 2 · Análisis de datos,26,Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-04-06,Martes,Fase 2 · Análisis de datos,26,Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-04-07,Miércoles,Fase 3 · Automatización,27,Estudiar: Microsoft Learn: fundamentos de Power Automate,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-08,Jueves,Fase 3 · Automatización,27,Estudiar: Microsoft Learn: fundamentos de Power Automate,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-09,Viernes,Fase 3 · Automatización,27,Estudiar: Microsoft Learn: fundamentos de Power Automate,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-10,Sábado,Fase 3 · Automatización,27,Mini proyecto / práctica de la semana: Microsoft Learn: fundamentos de Power Automate,GitHub / Colab,45,Media,Pendiente
+2027-04-12,Lunes,Fase 3 · Automatización,27,Estudiar: Microsoft Learn: fundamentos de Power Automate,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-13,Martes,Fase 3 · Automatización,27,Estudiar: Microsoft Learn: fundamentos de Power Automate,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-14,Miércoles,Fase 3 · Automatización,28,Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-15,Jueves,Fase 3 · Automatización,28,Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-16,Viernes,Fase 3 · Automatización,28,Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-17,Sábado,Fase 3 · Automatización,28,Mini proyecto / práctica de la semana: Microsoft Learn: flujos en la nube (triggers y acciones),GitHub / Colab,45,Media,Pendiente
+2027-04-19,Lunes,Fase 3 · Automatización,28,Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-20,Martes,Fase 3 · Automatización,28,Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-21,Miércoles,Fase 3 · Automatización,29,"Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-22,Jueves,Fase 3 · Automatización,29,"Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-23,Viernes,Fase 3 · Automatización,29,"Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-24,Sábado,Fase 3 · Automatización,29,"Mini proyecto / práctica de la semana: Microsoft Learn: flujos con Excel, SharePoint y correo",GitHub / Colab,45,Media,Pendiente
+2027-04-26,Lunes,Fase 3 · Automatización,29,"Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-27,Martes,Fase 3 · Automatización,29,"Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-28,Miércoles,Fase 3 · Automatización,30,Estudiar: Microsoft Learn: fundamentos de Power Apps,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-29,Jueves,Fase 3 · Automatización,30,Estudiar: Microsoft Learn: fundamentos de Power Apps,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-04-30,Viernes,Fase 3 · Automatización,30,Estudiar: Microsoft Learn: fundamentos de Power Apps,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-01,Sábado,Fase 3 · Automatización,30,Mini proyecto / práctica de la semana: Microsoft Learn: fundamentos de Power Apps,GitHub / Colab,45,Media,Pendiente
+2027-05-03,Lunes,Fase 3 · Automatización,30,Estudiar: Microsoft Learn: fundamentos de Power Apps,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-04,Martes,Fase 3 · Automatización,30,Estudiar: Microsoft Learn: fundamentos de Power Apps,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-05,Miércoles,Fase 3 · Automatización,31,Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-06,Jueves,Fase 3 · Automatización,31,Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-07,Viernes,Fase 3 · Automatización,31,Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-08,Sábado,Fase 3 · Automatización,31,Mini proyecto / práctica de la semana: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint,GitHub / Colab,45,Media,Pendiente
+2027-05-10,Lunes,Fase 3 · Automatización,31,Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-11,Martes,Fase 3 · Automatización,31,Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-12,Miércoles,Fase 3 · Automatización,32,Estudiar: Microsoft Learn: Power Apps (formularios y dashboards),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-13,Jueves,Fase 3 · Automatización,32,Estudiar: Microsoft Learn: Power Apps (formularios y dashboards),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-14,Viernes,Fase 3 · Automatización,32,Estudiar: Microsoft Learn: Power Apps (formularios y dashboards),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-15,Sábado,Fase 3 · Automatización,32,Mini proyecto / práctica de la semana: Microsoft Learn: Power Apps (formularios y dashboards),GitHub / Colab,45,Media,Pendiente
+2027-05-17,Lunes,Fase 3 · Automatización,32,Estudiar: Microsoft Learn: Power Apps (formularios y dashboards),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-18,Martes,Fase 3 · Automatización,32,Estudiar: Microsoft Learn: Power Apps (formularios y dashboards),Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-19,Miércoles,Fase 3 · Automatización,33,"Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-20,Jueves,Fase 3 · Automatización,33,"Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-21,Viernes,Fase 3 · Automatización,33,"Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-22,Sábado,Fase 3 · Automatización,33,"Mini proyecto / práctica de la semana: Microsoft Learn: Power Platform, seguridad y buenas prácticas",GitHub / Colab,45,Media,Pendiente
+2027-05-24,Lunes,Fase 3 · Automatización,33,"Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-25,Martes,Fase 3 · Automatización,33,"Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-26,Miércoles,Fase 3 · Automatización,34,Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-27,Jueves,Fase 3 · Automatización,34,Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-28,Viernes,Fase 3 · Automatización,34,Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-05-29,Sábado,Fase 3 · Automatización,34,Mini proyecto / práctica de la semana: Microsoft Learn: repaso de Power Platform y práctica propia,GitHub / Colab,45,Media,Pendiente
+2027-05-31,Lunes,Fase 3 · Automatización,34,Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-06-01,Martes,Fase 3 · Automatización,34,Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia,Microsoft Learn (learn.microsoft.com),30,Alta,Pendiente
+2027-06-02,Miércoles,Fase 3 · Automatización,35,Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-03,Jueves,Fase 3 · Automatización,35,Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-04,Viernes,Fase 3 · Automatización,35,Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-05,Sábado,Fase 3 · Automatización,35,Mini proyecto / práctica de la semana: Automate the Boring Stuff: manejo de archivos y carpetas con Python,GitHub / Colab,45,Media,Pendiente
+2027-06-07,Lunes,Fase 3 · Automatización,35,Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-08,Martes,Fase 3 · Automatización,35,Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-09,Miércoles,Fase 3 · Automatización,36,Estudiar: Automate the Boring Stuff: Excel y CSV con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-10,Jueves,Fase 3 · Automatización,36,Estudiar: Automate the Boring Stuff: Excel y CSV con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-11,Viernes,Fase 3 · Automatización,36,Estudiar: Automate the Boring Stuff: Excel y CSV con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-12,Sábado,Fase 3 · Automatización,36,Mini proyecto / práctica de la semana: Automate the Boring Stuff: Excel y CSV con Python,GitHub / Colab,45,Media,Pendiente
+2027-06-14,Lunes,Fase 3 · Automatización,36,Estudiar: Automate the Boring Stuff: Excel y CSV con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-15,Martes,Fase 3 · Automatización,36,Estudiar: Automate the Boring Stuff: Excel y CSV con Python,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-16,Miércoles,Fase 3 · Automatización,37,Estudiar: Automate the Boring Stuff: correos y tareas programadas,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-17,Jueves,Fase 3 · Automatización,37,Estudiar: Automate the Boring Stuff: correos y tareas programadas,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-18,Viernes,Fase 3 · Automatización,37,Estudiar: Automate the Boring Stuff: correos y tareas programadas,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-19,Sábado,Fase 3 · Automatización,37,Mini proyecto / práctica de la semana: Automate the Boring Stuff: correos y tareas programadas,GitHub / Colab,45,Media,Pendiente
+2027-06-21,Lunes,Fase 3 · Automatización,37,Estudiar: Automate the Boring Stuff: correos y tareas programadas,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-22,Martes,Fase 3 · Automatización,37,Estudiar: Automate the Boring Stuff: correos y tareas programadas,Automate the Boring Stuff (automatetheboringstuff.com),30,Alta,Pendiente
+2027-06-23,Miércoles,Fase 3 · Automatización,38,Estudiar: Mini proyecto de automatización propio (parte 1),GitHub / Colab,30,Alta,Pendiente
+2027-06-24,Jueves,Fase 3 · Automatización,38,Estudiar: Mini proyecto de automatización propio (parte 1),GitHub / Colab,30,Alta,Pendiente
+2027-06-25,Viernes,Fase 3 · Automatización,38,Estudiar: Mini proyecto de automatización propio (parte 1),GitHub / Colab,30,Alta,Pendiente
+2027-06-26,Sábado,Fase 3 · Automatización,38,Mini proyecto / práctica de la semana: Mini proyecto de automatización propio (parte 1),GitHub / Colab,45,Media,Pendiente
+2027-06-28,Lunes,Fase 3 · Automatización,38,Estudiar: Mini proyecto de automatización propio (parte 1),GitHub / Colab,30,Alta,Pendiente
+2027-06-29,Martes,Fase 3 · Automatización,38,Estudiar: Mini proyecto de automatización propio (parte 1),GitHub / Colab,30,Alta,Pendiente
+2027-06-30,Miércoles,Fase 3 · Automatización,39,Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub,GitHub / Colab,30,Alta,Pendiente
+2027-07-01,Jueves,Fase 3 · Automatización,39,Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub,GitHub / Colab,30,Alta,Pendiente
+2027-07-02,Viernes,Fase 3 · Automatización,39,Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub,GitHub / Colab,30,Alta,Pendiente
+2027-07-03,Sábado,Fase 3 · Automatización,39,Mini proyecto / práctica de la semana: Mini proyecto de automatización propio (parte 2) y subir a GitHub,GitHub / Colab,45,Media,Pendiente
+2027-07-05,Lunes,Fase 3 · Automatización,39,Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub,GitHub / Colab,30,Alta,Pendiente
+2027-07-06,Martes,Fase 3 · Automatización,39,Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub,GitHub / Colab,30,Alta,Pendiente
+2027-07-07,Miércoles,Fase 4 · IA y minería de datos,40,Estudiar: Kaggle: Intro to Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-08,Jueves,Fase 4 · IA y minería de datos,40,Estudiar: Kaggle: Intro to Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-09,Viernes,Fase 4 · IA y minería de datos,40,Estudiar: Kaggle: Intro to Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-10,Sábado,Fase 4 · IA y minería de datos,40,Mini proyecto / práctica de la semana: Kaggle: Intro to Machine Learning (parte 1),GitHub / Colab,45,Media,Pendiente
+2027-07-12,Lunes,Fase 4 · IA y minería de datos,40,Estudiar: Kaggle: Intro to Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-13,Martes,Fase 4 · IA y minería de datos,40,Estudiar: Kaggle: Intro to Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-14,Miércoles,Fase 4 · IA y minería de datos,41,Estudiar: Kaggle: Intro to Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-15,Jueves,Fase 4 · IA y minería de datos,41,Estudiar: Kaggle: Intro to Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-16,Viernes,Fase 4 · IA y minería de datos,41,Estudiar: Kaggle: Intro to Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-17,Sábado,Fase 4 · IA y minería de datos,41,Mini proyecto / práctica de la semana: Kaggle: Intro to Machine Learning (parte 2),GitHub / Colab,45,Media,Pendiente
+2027-07-19,Lunes,Fase 4 · IA y minería de datos,41,Estudiar: Kaggle: Intro to Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-20,Martes,Fase 4 · IA y minería de datos,41,Estudiar: Kaggle: Intro to Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-21,Miércoles,Fase 4 · IA y minería de datos,42,Estudiar: Kaggle: Intermediate Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-22,Jueves,Fase 4 · IA y minería de datos,42,Estudiar: Kaggle: Intermediate Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-23,Viernes,Fase 4 · IA y minería de datos,42,Estudiar: Kaggle: Intermediate Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-24,Sábado,Fase 4 · IA y minería de datos,42,Mini proyecto / práctica de la semana: Kaggle: Intermediate Machine Learning (parte 1),GitHub / Colab,45,Media,Pendiente
+2027-07-26,Lunes,Fase 4 · IA y minería de datos,42,Estudiar: Kaggle: Intermediate Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-27,Martes,Fase 4 · IA y minería de datos,42,Estudiar: Kaggle: Intermediate Machine Learning (parte 1),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-28,Miércoles,Fase 4 · IA y minería de datos,43,Estudiar: Kaggle: Intermediate Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-29,Jueves,Fase 4 · IA y minería de datos,43,Estudiar: Kaggle: Intermediate Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-30,Viernes,Fase 4 · IA y minería de datos,43,Estudiar: Kaggle: Intermediate Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-07-31,Sábado,Fase 4 · IA y minería de datos,43,Mini proyecto / práctica de la semana: Kaggle: Intermediate Machine Learning (parte 2),GitHub / Colab,45,Media,Pendiente
+2027-08-02,Lunes,Fase 4 · IA y minería de datos,43,Estudiar: Kaggle: Intermediate Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-08-03,Martes,Fase 4 · IA y minería de datos,43,Estudiar: Kaggle: Intermediate Machine Learning (parte 2),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-08-04,Miércoles,Fase 4 · IA y minería de datos,44,Estudiar: freeCodeCamp Machine Learning with Python (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-05,Jueves,Fase 4 · IA y minería de datos,44,Estudiar: freeCodeCamp Machine Learning with Python (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-06,Viernes,Fase 4 · IA y minería de datos,44,Estudiar: freeCodeCamp Machine Learning with Python (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-07,Sábado,Fase 4 · IA y minería de datos,44,Mini proyecto / práctica de la semana: freeCodeCamp Machine Learning with Python (parte 1),GitHub / Colab,45,Media,Pendiente
+2027-08-09,Lunes,Fase 4 · IA y minería de datos,44,Estudiar: freeCodeCamp Machine Learning with Python (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-10,Martes,Fase 4 · IA y minería de datos,44,Estudiar: freeCodeCamp Machine Learning with Python (parte 1),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-11,Miércoles,Fase 4 · IA y minería de datos,45,Estudiar: freeCodeCamp Machine Learning with Python (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-12,Jueves,Fase 4 · IA y minería de datos,45,Estudiar: freeCodeCamp Machine Learning with Python (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-13,Viernes,Fase 4 · IA y minería de datos,45,Estudiar: freeCodeCamp Machine Learning with Python (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-14,Sábado,Fase 4 · IA y minería de datos,45,Mini proyecto / práctica de la semana: freeCodeCamp Machine Learning with Python (parte 2),GitHub / Colab,45,Media,Pendiente
+2027-08-16,Lunes,Fase 4 · IA y minería de datos,45,Estudiar: freeCodeCamp Machine Learning with Python (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-17,Martes,Fase 4 · IA y minería de datos,45,Estudiar: freeCodeCamp Machine Learning with Python (parte 2),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-18,Miércoles,Fase 4 · IA y minería de datos,46,Estudiar: freeCodeCamp Machine Learning with Python (parte 3),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-19,Jueves,Fase 4 · IA y minería de datos,46,Estudiar: freeCodeCamp Machine Learning with Python (parte 3),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-20,Viernes,Fase 4 · IA y minería de datos,46,Estudiar: freeCodeCamp Machine Learning with Python (parte 3),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-21,Sábado,Fase 4 · IA y minería de datos,46,Mini proyecto / práctica de la semana: freeCodeCamp Machine Learning with Python (parte 3),GitHub / Colab,45,Media,Pendiente
+2027-08-23,Lunes,Fase 4 · IA y minería de datos,46,Estudiar: freeCodeCamp Machine Learning with Python (parte 3),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-24,Martes,Fase 4 · IA y minería de datos,46,Estudiar: freeCodeCamp Machine Learning with Python (parte 3),freeCodeCamp (freecodecamp.org/learn),30,Alta,Pendiente
+2027-08-25,Miércoles,Fase 4 · IA y minería de datos,47,Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-08-26,Jueves,Fase 4 · IA y minería de datos,47,Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-08-27,Viernes,Fase 4 · IA y minería de datos,47,Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-08-28,Sábado,Fase 4 · IA y minería de datos,47,Mini proyecto / práctica de la semana: Minería de datos: limpieza de datos (Kaggle Data Cleaning),GitHub / Colab,45,Media,Pendiente
+2027-08-30,Lunes,Fase 4 · IA y minería de datos,47,Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-08-31,Martes,Fase 4 · IA y minería de datos,47,Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning),Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-09-01,Miércoles,Fase 4 · IA y minería de datos,48,Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-09-02,Jueves,Fase 4 · IA y minería de datos,48,Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-09-03,Viernes,Fase 4 · IA y minería de datos,48,Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-09-04,Sábado,Fase 4 · IA y minería de datos,48,Mini proyecto / práctica de la semana: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn,GitHub / Colab,45,Media,Pendiente
+2027-09-06,Lunes,Fase 4 · IA y minería de datos,48,Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-09-07,Martes,Fase 4 · IA y minería de datos,48,Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn,Kaggle Learn (kaggle.com/learn),30,Alta,Pendiente
+2027-09-08,Miércoles,Fase 4 · IA y minería de datos,49,Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma),IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-09,Jueves,Fase 4 · IA y minería de datos,49,Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma),IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-10,Viernes,Fase 4 · IA y minería de datos,49,Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma),IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-11,Sábado,Fase 4 · IA y minería de datos,49,Mini proyecto / práctica de la semana: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma),GitHub / Colab,45,Media,Pendiente
+2027-09-13,Lunes,Fase 4 · IA y minería de datos,49,Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma),IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-14,Martes,Fase 4 · IA y minería de datos,49,Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma),IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-15,Miércoles,Fase 4 · IA y minería de datos,50,Estudiar: IBM SkillsBuild: IA aplicada y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-16,Jueves,Fase 4 · IA y minería de datos,50,Estudiar: IBM SkillsBuild: IA aplicada y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-17,Viernes,Fase 4 · IA y minería de datos,50,Estudiar: IBM SkillsBuild: IA aplicada y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-18,Sábado,Fase 4 · IA y minería de datos,50,Mini proyecto / práctica de la semana: IBM SkillsBuild: IA aplicada y repaso,GitHub / Colab,45,Media,Pendiente
+2027-09-20,Lunes,Fase 4 · IA y minería de datos,50,Estudiar: IBM SkillsBuild: IA aplicada y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-21,Martes,Fase 4 · IA y minería de datos,50,Estudiar: IBM SkillsBuild: IA aplicada y repaso,IBM SkillsBuild (skillsbuild.org),30,Alta,Pendiente
+2027-09-22,Miércoles,Fase 4 · IA y minería de datos,51,Estudiar: Proyecto final integrador: datos + automatización + IA,GitHub / Colab,30,Alta,Pendiente
+2027-09-23,Jueves,Fase 4 · IA y minería de datos,51,Estudiar: Proyecto final integrador: datos + automatización + IA,GitHub / Colab,30,Alta,Pendiente
+2027-09-24,Viernes,Fase 4 · IA y minería de datos,51,Estudiar: Proyecto final integrador: datos + automatización + IA,GitHub / Colab,30,Alta,Pendiente
+2027-09-25,Sábado,Fase 4 · IA y minería de datos,51,Mini proyecto / práctica de la semana: Proyecto final integrador: datos + automatización + IA,GitHub / Colab,45,Media,Pendiente
+2027-09-27,Lunes,Fase 4 · IA y minería de datos,51,Estudiar: Proyecto final integrador: datos + automatización + IA,GitHub / Colab,30,Alta,Pendiente
+2027-09-28,Martes,Fase 4 · IA y minería de datos,51,Estudiar: Proyecto final integrador: datos + automatización + IA,GitHub / Colab,30,Alta,Pendiente
+2027-09-29,Miércoles,Fase 4 · IA y minería de datos,52,"Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",GitHub / Colab,30,Alta,Pendiente
+2027-09-30,Jueves,Fase 4 · IA y minería de datos,52,"Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",GitHub / Colab,30,Alta,Pendiente
+2027-10-01,Viernes,Fase 4 · IA y minería de datos,52,"Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",GitHub / Colab,30,Alta,Pendiente
+2027-10-02,Sábado,Fase 4 · IA y minería de datos,52,"Mini proyecto / práctica de la semana: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",GitHub / Colab,45,Media,Pendiente
+2027-10-04,Lunes,Fase 4 · IA y minería de datos,52,"Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",GitHub / Colab,30,Alta,Pendiente
+2027-10-05,Martes,Fase 4 · IA y minería de datos,52,"Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",GitHub / Colab,30,Alta,Pendiente

@@ -6,7 +6,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const Native = window.GSNative || null;
 const IS_ANDROID = !!Native;
 const MIN = 60000, HOUR = 3600000, DAY = 86400000;
-const APP_VERSION = '2.0.0';
+const APP_VERSION = '2.3.0';
 const AGENDA_FILE = 'gs-agenda.datos';
 const INBOX_DIR = 'solicitudes';
 const uid = () => 't' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
@@ -14,7 +14,7 @@ const uid = () => 't' + Date.now().toString(36) + Math.random().toString(36).sli
 const STATUS = { PENDING: 'Pendiente', IN_PROGRESS: 'En progreso', WAITING: 'En espera', COMPLETED: 'Completada' };
 const STATUS_COLOR = { PENDING: 'var(--c-slate)', IN_PROGRESS: 'var(--c-indigo)', WAITING: 'var(--c-amber)', COMPLETED: 'var(--ok)' };
 const PRIO = { HIGH: 'Alta', MEDIUM: 'Media', LOW: 'Baja' };
-const PRIO_COLOR = { HIGH: 'var(--c-red)', MEDIUM: 'var(--c-amber)', LOW: 'var(--c-teal)' };
+const PRIO_COLOR = { HIGH: 'var(--c-alert)', MEDIUM: 'var(--c-violet)', LOW: 'var(--c-teal)' };
 const PRIO_RANK = { HIGH: 0, MEDIUM: 1, LOW: 2 };
 const REPEAT = { NONE: 'No se repite', DAILY: 'Cada día', WEEKLY: 'Cada semana', MONTHLY: 'Cada mes' };
 const REMINDER_OPTS = [[0, 'A la hora'], [15, '15 min antes'], [30, '30 min antes'], [60, '1 hora antes'], [1440, '1 día antes']];
@@ -71,7 +71,7 @@ const S = {
 };
 
 function defaultSettings() {
-  return { name: 'Heidi', planEnabled: true, planTime: '06:30', workStart: '07:00', workEnd: '17:00', theme: 'auto', lockMinutes: 5, updatedAt: 0 };
+  return { name: 'Heidi', buddy: true, planEnabled: true, planTime: '06:30', workStart: '07:00', workEnd: '17:00', theme: 'auto', lockMinutes: 5, updatedAt: 0 };
 }
 function defaultState() { return { v: 1, tasks: [], settings: defaultSettings(), inboxDone: [], updatedAt: Date.now() }; }
 

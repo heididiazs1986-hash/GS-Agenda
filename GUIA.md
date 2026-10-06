@@ -1,4 +1,4 @@
-# Guía de GS Agenda 2.0
+# Guía de GS Agenda 2.3
 
 ## 1. Subir los cambios a GitHub (desde el navegador)
 1. Descomprime el ZIP en tu computador.
@@ -94,3 +94,27 @@ Toca el micrófono en el editor y di, por ejemplo: “Informe de diagnóstico ma
 - `/`: buscar.
 - `Ctrl + Enter`: guardar en el editor.
 - `Esc`: cerrar.
+
+## 9. Importar tareas (por ejemplo, el plan de estudio)
+1. Abre **Ajustes > Datos > Importar tareas** (en el celular y en el PC).
+2. Elige un archivo `.csv` o `.json`. El plan de estudio está en la carpeta `plan-estudio` de este proyecto: usa `plan_estudio.csv`.
+3. La app muestra una vista previa. Puedes cambiar la hora de estudio (por defecto 7:00 p. m.), importar solo los próximos 30 días y omitir las tareas que ya pasaron.
+4. Pulsa **Importar**. Si importas el mismo archivo otra vez, no se duplica nada ni se pisan tus cambios.
+
+**Columnas que entiende** (en CSV o JSON, con o sin tildes): `Fecha`, `Tarea` (o `Título`), `Fase` (o `Categoría`), `Notas` (o `Plataforma`), `Duración (min)`, `Prioridad` (Alta, Media, Baja), `Estado` (Pendiente, En progreso, En espera, Hecho) y, opcional, `Hora`. Las fechas pueden venir como 2026-10-15 o 15/10/2026. Solo `Fecha` y `Tarea` son obligatorias.
+
+**Archivos de Excel (.xlsx):** no se leen directamente para mantener la app liviana. En Excel usa **Guardar como > CSV UTF-8** y carga ese archivo.
+
+Para el celular, copia el archivo al teléfono (WhatsApp, Drive o cable) antes de importarlo. Si ya sincronizas con OneDrive, basta con importar en un dispositivo y el otro lo recibe en la siguiente sincronización.
+
+## 9. Importar tareas (por ejemplo, el plan de estudio)
+1. Abre **Ajustes > Datos > Importar tareas** (en el celular y en el PC).
+2. Elige un archivo `.csv` o `.json`. El plan de estudio está en la carpeta `plan-estudio` de este proyecto: usa `plan_estudio.csv`.
+3. La app muestra una vista previa. Puedes cambiar la hora de estudio (por defecto 7:00 p. m.), importar solo los próximos 30 días y omitir las tareas que ya pasaron.
+4. Pulsa **Importar**. Si importas el mismo archivo otra vez, no se duplica nada ni se pisan tus cambios.
+
+**Columnas que entiende** (en CSV o JSON, con o sin tildes): `Fecha`, `Tarea` (o `Título`), `Fase` (o `Categoría`), `Notas` (o `Plataforma`), `Duración (min)`, `Prioridad` (Alta, Media, Baja), `Estado` (Pendiente, En progreso, En espera, Hecho) y, opcional, `Hora`. Las fechas pueden venir como 2026-10-15 o 15/10/2026. Solo `Fecha` y `Tarea` son obligatorias.
+
+**Archivos de Excel (.xlsx):** no se leen directamente para mantener la app liviana. En Excel usa **Guardar como > CSV UTF-8** y carga ese archivo.
+
+Para el celular, copia el archivo al teléfono (WhatsApp, Drive o cable) antes de importarlo. Si ya sincronizas con OneDrive, basta con importar en un dispositivo y el otro lo recibe en la siguiente sincronización.

@@ -1,0 +1,3122 @@
+[
+ {
+  "fecha": "2026-10-07",
+  "tarea": "Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",
+  "categoria": "Fase 1 · Python",
+  "semana": 1,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-08",
+  "tarea": "Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",
+  "categoria": "Fase 1 · Python",
+  "semana": 1,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-09",
+  "tarea": "Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",
+  "categoria": "Fase 1 · Python",
+  "semana": 1,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-10",
+  "tarea": "Mini proyecto / práctica de la semana: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",
+  "categoria": "Fase 1 · Python",
+  "semana": 1,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-12",
+  "tarea": "Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",
+  "categoria": "Fase 1 · Python",
+  "semana": 1,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-13",
+  "tarea": "Estudiar: Preparación: crear cuenta en freeCodeCamp, abrir Google Colab; variables y tipos de datos",
+  "categoria": "Fase 1 · Python",
+  "semana": 1,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-14",
+  "tarea": "Estudiar: Python: cadenas de texto y entrada/salida",
+  "categoria": "Fase 1 · Python",
+  "semana": 2,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-15",
+  "tarea": "Estudiar: Python: cadenas de texto y entrada/salida",
+  "categoria": "Fase 1 · Python",
+  "semana": 2,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-16",
+  "tarea": "Estudiar: Python: cadenas de texto y entrada/salida",
+  "categoria": "Fase 1 · Python",
+  "semana": 2,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-17",
+  "tarea": "Mini proyecto / práctica de la semana: Python: cadenas de texto y entrada/salida",
+  "categoria": "Fase 1 · Python",
+  "semana": 2,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-19",
+  "tarea": "Estudiar: Python: cadenas de texto y entrada/salida",
+  "categoria": "Fase 1 · Python",
+  "semana": 2,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-20",
+  "tarea": "Estudiar: Python: cadenas de texto y entrada/salida",
+  "categoria": "Fase 1 · Python",
+  "semana": 2,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-21",
+  "tarea": "Estudiar: Python: condicionales (if/elif/else)",
+  "categoria": "Fase 1 · Python",
+  "semana": 3,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-22",
+  "tarea": "Estudiar: Python: condicionales (if/elif/else)",
+  "categoria": "Fase 1 · Python",
+  "semana": 3,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-23",
+  "tarea": "Estudiar: Python: condicionales (if/elif/else)",
+  "categoria": "Fase 1 · Python",
+  "semana": 3,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-24",
+  "tarea": "Mini proyecto / práctica de la semana: Python: condicionales (if/elif/else)",
+  "categoria": "Fase 1 · Python",
+  "semana": 3,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-26",
+  "tarea": "Estudiar: Python: condicionales (if/elif/else)",
+  "categoria": "Fase 1 · Python",
+  "semana": 3,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-27",
+  "tarea": "Estudiar: Python: condicionales (if/elif/else)",
+  "categoria": "Fase 1 · Python",
+  "semana": 3,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-28",
+  "tarea": "Estudiar: Python: bucles (for/while)",
+  "categoria": "Fase 1 · Python",
+  "semana": 4,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-29",
+  "tarea": "Estudiar: Python: bucles (for/while)",
+  "categoria": "Fase 1 · Python",
+  "semana": 4,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-30",
+  "tarea": "Estudiar: Python: bucles (for/while)",
+  "categoria": "Fase 1 · Python",
+  "semana": 4,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-10-31",
+  "tarea": "Mini proyecto / práctica de la semana: Python: bucles (for/while)",
+  "categoria": "Fase 1 · Python",
+  "semana": 4,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-02",
+  "tarea": "Estudiar: Python: bucles (for/while)",
+  "categoria": "Fase 1 · Python",
+  "semana": 4,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-03",
+  "tarea": "Estudiar: Python: bucles (for/while)",
+  "categoria": "Fase 1 · Python",
+  "semana": 4,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-04",
+  "tarea": "Estudiar: Python: listas",
+  "categoria": "Fase 1 · Python",
+  "semana": 5,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-05",
+  "tarea": "Estudiar: Python: listas",
+  "categoria": "Fase 1 · Python",
+  "semana": 5,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-06",
+  "tarea": "Estudiar: Python: listas",
+  "categoria": "Fase 1 · Python",
+  "semana": 5,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-07",
+  "tarea": "Mini proyecto / práctica de la semana: Python: listas",
+  "categoria": "Fase 1 · Python",
+  "semana": 5,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-09",
+  "tarea": "Estudiar: Python: listas",
+  "categoria": "Fase 1 · Python",
+  "semana": 5,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-10",
+  "tarea": "Estudiar: Python: listas",
+  "categoria": "Fase 1 · Python",
+  "semana": 5,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-11",
+  "tarea": "Estudiar: Python: diccionarios y tuplas",
+  "categoria": "Fase 1 · Python",
+  "semana": 6,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-12",
+  "tarea": "Estudiar: Python: diccionarios y tuplas",
+  "categoria": "Fase 1 · Python",
+  "semana": 6,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-13",
+  "tarea": "Estudiar: Python: diccionarios y tuplas",
+  "categoria": "Fase 1 · Python",
+  "semana": 6,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-14",
+  "tarea": "Mini proyecto / práctica de la semana: Python: diccionarios y tuplas",
+  "categoria": "Fase 1 · Python",
+  "semana": 6,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-16",
+  "tarea": "Estudiar: Python: diccionarios y tuplas",
+  "categoria": "Fase 1 · Python",
+  "semana": 6,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-17",
+  "tarea": "Estudiar: Python: diccionarios y tuplas",
+  "categoria": "Fase 1 · Python",
+  "semana": 6,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-18",
+  "tarea": "Estudiar: Python: funciones",
+  "categoria": "Fase 1 · Python",
+  "semana": 7,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-19",
+  "tarea": "Estudiar: Python: funciones",
+  "categoria": "Fase 1 · Python",
+  "semana": 7,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-20",
+  "tarea": "Estudiar: Python: funciones",
+  "categoria": "Fase 1 · Python",
+  "semana": 7,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-21",
+  "tarea": "Mini proyecto / práctica de la semana: Python: funciones",
+  "categoria": "Fase 1 · Python",
+  "semana": 7,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-23",
+  "tarea": "Estudiar: Python: funciones",
+  "categoria": "Fase 1 · Python",
+  "semana": 7,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-24",
+  "tarea": "Estudiar: Python: funciones",
+  "categoria": "Fase 1 · Python",
+  "semana": 7,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-25",
+  "tarea": "Estudiar: Python: archivos y manejo de errores",
+  "categoria": "Fase 1 · Python",
+  "semana": 8,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-26",
+  "tarea": "Estudiar: Python: archivos y manejo de errores",
+  "categoria": "Fase 1 · Python",
+  "semana": 8,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-27",
+  "tarea": "Estudiar: Python: archivos y manejo de errores",
+  "categoria": "Fase 1 · Python",
+  "semana": 8,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-28",
+  "tarea": "Mini proyecto / práctica de la semana: Python: archivos y manejo de errores",
+  "categoria": "Fase 1 · Python",
+  "semana": 8,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-11-30",
+  "tarea": "Estudiar: Python: archivos y manejo de errores",
+  "categoria": "Fase 1 · Python",
+  "semana": 8,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-01",
+  "tarea": "Estudiar: Python: archivos y manejo de errores",
+  "categoria": "Fase 1 · Python",
+  "semana": 8,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-02",
+  "tarea": "Estudiar: Python: módulos y librerías",
+  "categoria": "Fase 1 · Python",
+  "semana": 9,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-03",
+  "tarea": "Estudiar: Python: módulos y librerías",
+  "categoria": "Fase 1 · Python",
+  "semana": 9,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-04",
+  "tarea": "Estudiar: Python: módulos y librerías",
+  "categoria": "Fase 1 · Python",
+  "semana": 9,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-05",
+  "tarea": "Mini proyecto / práctica de la semana: Python: módulos y librerías",
+  "categoria": "Fase 1 · Python",
+  "semana": 9,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-07",
+  "tarea": "Estudiar: Python: módulos y librerías",
+  "categoria": "Fase 1 · Python",
+  "semana": 9,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-08",
+  "tarea": "Estudiar: Python: módulos y librerías",
+  "categoria": "Fase 1 · Python",
+  "semana": 9,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-09",
+  "tarea": "Estudiar: Python: introducción a objetos y clases",
+  "categoria": "Fase 1 · Python",
+  "semana": 10,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-10",
+  "tarea": "Estudiar: Python: introducción a objetos y clases",
+  "categoria": "Fase 1 · Python",
+  "semana": 10,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-11",
+  "tarea": "Estudiar: Python: introducción a objetos y clases",
+  "categoria": "Fase 1 · Python",
+  "semana": 10,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-12",
+  "tarea": "Mini proyecto / práctica de la semana: Python: introducción a objetos y clases",
+  "categoria": "Fase 1 · Python",
+  "semana": 10,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-14",
+  "tarea": "Estudiar: Python: introducción a objetos y clases",
+  "categoria": "Fase 1 · Python",
+  "semana": 10,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-15",
+  "tarea": "Estudiar: Python: introducción a objetos y clases",
+  "categoria": "Fase 1 · Python",
+  "semana": 10,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-16",
+  "tarea": "Estudiar: Proyecto 1 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 11,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-17",
+  "tarea": "Estudiar: Proyecto 1 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 11,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-18",
+  "tarea": "Estudiar: Proyecto 1 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 11,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-19",
+  "tarea": "Mini proyecto / práctica de la semana: Proyecto 1 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 11,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-21",
+  "tarea": "Estudiar: Proyecto 1 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 11,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-22",
+  "tarea": "Estudiar: Proyecto 1 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 11,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-23",
+  "tarea": "Estudiar: Proyecto 2 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 12,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-24",
+  "tarea": "Estudiar: Proyecto 2 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 12,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-25",
+  "tarea": "Estudiar: Proyecto 2 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 12,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-26",
+  "tarea": "Mini proyecto / práctica de la semana: Proyecto 2 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 12,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-28",
+  "tarea": "Estudiar: Proyecto 2 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 12,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-29",
+  "tarea": "Estudiar: Proyecto 2 de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 12,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-30",
+  "tarea": "Estudiar: Repaso y examen final de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 13,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2026-12-31",
+  "tarea": "Estudiar: Repaso y examen final de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 13,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-01",
+  "tarea": "Estudiar: Repaso y examen final de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 13,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-02",
+  "tarea": "Mini proyecto / práctica de la semana: Repaso y examen final de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 13,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-04",
+  "tarea": "Estudiar: Repaso y examen final de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 13,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-05",
+  "tarea": "Estudiar: Repaso y examen final de la certificación de Python",
+  "categoria": "Fase 1 · Python",
+  "semana": 13,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-06",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 14,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-07",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 14,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-08",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 14,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-09",
+  "tarea": "Mini proyecto / práctica de la semana: Kaggle: curso Pandas (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 14,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-11",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 14,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-12",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 14,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-13",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 15,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-14",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 15,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-15",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 15,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-16",
+  "tarea": "Mini proyecto / práctica de la semana: Kaggle: curso Pandas (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 15,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-18",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 15,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-19",
+  "tarea": "Estudiar: Kaggle: curso Pandas (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 15,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-20",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 16,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-21",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 16,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-22",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 16,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-23",
+  "tarea": "Mini proyecto / práctica de la semana: Kaggle: Intro to SQL (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 16,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-25",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 16,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-26",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 16,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-27",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 17,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-28",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 17,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-29",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 17,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-01-30",
+  "tarea": "Mini proyecto / práctica de la semana: Kaggle: Intro to SQL (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 17,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-01",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 17,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-02",
+  "tarea": "Estudiar: Kaggle: Intro to SQL (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 17,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-03",
+  "tarea": "Estudiar: Kaggle: Data Visualization",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 18,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-04",
+  "tarea": "Estudiar: Kaggle: Data Visualization",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 18,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-05",
+  "tarea": "Estudiar: Kaggle: Data Visualization",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 18,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-06",
+  "tarea": "Mini proyecto / práctica de la semana: Kaggle: Data Visualization",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 18,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-08",
+  "tarea": "Estudiar: Kaggle: Data Visualization",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 18,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-09",
+  "tarea": "Estudiar: Kaggle: Data Visualization",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 18,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-10",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 19,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-11",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 19,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-12",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 19,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-13",
+  "tarea": "Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: NumPy (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 19,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-15",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 19,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-16",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 19,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-17",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 20,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-18",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 20,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-19",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 20,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-20",
+  "tarea": "Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: NumPy (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 20,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-22",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 20,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-23",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: NumPy (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 20,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-24",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 21,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-25",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 21,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-26",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 21,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-02-27",
+  "tarea": "Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 21,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-01",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 21,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-02",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 1)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 21,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-03",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 22,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-04",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 22,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-05",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 22,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-06",
+  "tarea": "Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 22,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-08",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 22,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-09",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Pandas avanzado (parte 2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 22,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-10",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 23,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-11",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 23,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-12",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 23,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-13",
+  "tarea": "Mini proyecto / práctica de la semana: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 23,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-15",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 23,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-16",
+  "tarea": "Estudiar: freeCodeCamp Data Analysis with Python: Matplotlib y Seaborn",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 23,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-17",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (1-2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 24,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-18",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (1-2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 24,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-19",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (1-2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 24,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-20",
+  "tarea": "Mini proyecto / práctica de la semana: Proyectos de la certificación Data Analysis with Python (1-2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 24,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-22",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (1-2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 24,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-23",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (1-2)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 24,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-24",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (3-5)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 25,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-25",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (3-5)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 25,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-26",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (3-5)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 25,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-27",
+  "tarea": "Mini proyecto / práctica de la semana: Proyectos de la certificación Data Analysis with Python (3-5)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 25,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-29",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (3-5)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 25,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-30",
+  "tarea": "Estudiar: Proyectos de la certificación Data Analysis with Python (3-5)",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 25,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-03-31",
+  "tarea": "Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 26,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-01",
+  "tarea": "Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 26,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-02",
+  "tarea": "Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 26,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-03",
+  "tarea": "Mini proyecto / práctica de la semana: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 26,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-05",
+  "tarea": "Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 26,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-06",
+  "tarea": "Estudiar: IBM SkillsBuild: ruta de Data Analysis (verificar cursos en español) y repaso",
+  "categoria": "Fase 2 · Análisis de datos",
+  "semana": 26,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-07",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Automate",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 27,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-08",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Automate",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 27,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-09",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Automate",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 27,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-10",
+  "tarea": "Mini proyecto / práctica de la semana: Microsoft Learn: fundamentos de Power Automate",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 27,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-12",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Automate",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 27,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-13",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Automate",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 27,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-14",
+  "tarea": "Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 28,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-15",
+  "tarea": "Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 28,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-16",
+  "tarea": "Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 28,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-17",
+  "tarea": "Mini proyecto / práctica de la semana: Microsoft Learn: flujos en la nube (triggers y acciones)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 28,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-19",
+  "tarea": "Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 28,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-20",
+  "tarea": "Estudiar: Microsoft Learn: flujos en la nube (triggers y acciones)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 28,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-21",
+  "tarea": "Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 29,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-22",
+  "tarea": "Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 29,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-23",
+  "tarea": "Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 29,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-24",
+  "tarea": "Mini proyecto / práctica de la semana: Microsoft Learn: flujos con Excel, SharePoint y correo",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 29,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-26",
+  "tarea": "Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 29,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-27",
+  "tarea": "Estudiar: Microsoft Learn: flujos con Excel, SharePoint y correo",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 29,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-28",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Apps",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 30,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-29",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Apps",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 30,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-04-30",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Apps",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 30,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-01",
+  "tarea": "Mini proyecto / práctica de la semana: Microsoft Learn: fundamentos de Power Apps",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 30,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-03",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Apps",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 30,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-04",
+  "tarea": "Estudiar: Microsoft Learn: fundamentos de Power Apps",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 30,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-05",
+  "tarea": "Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 31,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-06",
+  "tarea": "Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 31,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-07",
+  "tarea": "Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 31,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-08",
+  "tarea": "Mini proyecto / práctica de la semana: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 31,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-10",
+  "tarea": "Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 31,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-11",
+  "tarea": "Estudiar: Microsoft Learn: apps de lienzo con datos de Excel/SharePoint",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 31,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-12",
+  "tarea": "Estudiar: Microsoft Learn: Power Apps (formularios y dashboards)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 32,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-13",
+  "tarea": "Estudiar: Microsoft Learn: Power Apps (formularios y dashboards)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 32,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-14",
+  "tarea": "Estudiar: Microsoft Learn: Power Apps (formularios y dashboards)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 32,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-15",
+  "tarea": "Mini proyecto / práctica de la semana: Microsoft Learn: Power Apps (formularios y dashboards)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 32,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-17",
+  "tarea": "Estudiar: Microsoft Learn: Power Apps (formularios y dashboards)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 32,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-18",
+  "tarea": "Estudiar: Microsoft Learn: Power Apps (formularios y dashboards)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 32,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-19",
+  "tarea": "Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 33,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-20",
+  "tarea": "Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 33,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-21",
+  "tarea": "Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 33,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-22",
+  "tarea": "Mini proyecto / práctica de la semana: Microsoft Learn: Power Platform, seguridad y buenas prácticas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 33,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-24",
+  "tarea": "Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 33,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-25",
+  "tarea": "Estudiar: Microsoft Learn: Power Platform, seguridad y buenas prácticas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 33,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-26",
+  "tarea": "Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 34,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-27",
+  "tarea": "Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 34,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-28",
+  "tarea": "Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 34,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-29",
+  "tarea": "Mini proyecto / práctica de la semana: Microsoft Learn: repaso de Power Platform y práctica propia",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 34,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-05-31",
+  "tarea": "Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 34,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-01",
+  "tarea": "Estudiar: Microsoft Learn: repaso de Power Platform y práctica propia",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 34,
+  "notas": "Microsoft Learn (learn.microsoft.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-02",
+  "tarea": "Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 35,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-03",
+  "tarea": "Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 35,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-04",
+  "tarea": "Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 35,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-05",
+  "tarea": "Mini proyecto / práctica de la semana: Automate the Boring Stuff: manejo de archivos y carpetas con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 35,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-07",
+  "tarea": "Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 35,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-08",
+  "tarea": "Estudiar: Automate the Boring Stuff: manejo de archivos y carpetas con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 35,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-09",
+  "tarea": "Estudiar: Automate the Boring Stuff: Excel y CSV con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 36,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-10",
+  "tarea": "Estudiar: Automate the Boring Stuff: Excel y CSV con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 36,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-11",
+  "tarea": "Estudiar: Automate the Boring Stuff: Excel y CSV con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 36,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-12",
+  "tarea": "Mini proyecto / práctica de la semana: Automate the Boring Stuff: Excel y CSV con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 36,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-14",
+  "tarea": "Estudiar: Automate the Boring Stuff: Excel y CSV con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 36,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-15",
+  "tarea": "Estudiar: Automate the Boring Stuff: Excel y CSV con Python",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 36,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-16",
+  "tarea": "Estudiar: Automate the Boring Stuff: correos y tareas programadas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 37,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-17",
+  "tarea": "Estudiar: Automate the Boring Stuff: correos y tareas programadas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 37,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-18",
+  "tarea": "Estudiar: Automate the Boring Stuff: correos y tareas programadas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 37,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-19",
+  "tarea": "Mini proyecto / práctica de la semana: Automate the Boring Stuff: correos y tareas programadas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 37,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-21",
+  "tarea": "Estudiar: Automate the Boring Stuff: correos y tareas programadas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 37,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-22",
+  "tarea": "Estudiar: Automate the Boring Stuff: correos y tareas programadas",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 37,
+  "notas": "Automate the Boring Stuff (automatetheboringstuff.com)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-23",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 1)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 38,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-24",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 1)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 38,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-25",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 1)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 38,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-26",
+  "tarea": "Mini proyecto / práctica de la semana: Mini proyecto de automatización propio (parte 1)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 38,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-28",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 1)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 38,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-29",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 1)",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 38,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-06-30",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 39,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-01",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 39,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-02",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 39,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-03",
+  "tarea": "Mini proyecto / práctica de la semana: Mini proyecto de automatización propio (parte 2) y subir a GitHub",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 39,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-05",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 39,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-06",
+  "tarea": "Estudiar: Mini proyecto de automatización propio (parte 2) y subir a GitHub",
+  "categoria": "Fase 3 · Automatización",
+  "semana": 39,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-07",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 40,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-08",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 40,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-09",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 40,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-10",
+  "tarea": "Mini proyecto / práctica de la semana: Kaggle: Intro to Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 40,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-12",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 40,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-13",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 40,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-14",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 41,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-15",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 41,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-16",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 41,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-17",
+  "tarea": "Mini proyecto / práctica de la semana: Kaggle: Intro to Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 41,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-19",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 41,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-20",
+  "tarea": "Estudiar: Kaggle: Intro to Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 41,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-21",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 42,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-22",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 42,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-23",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 42,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-24",
+  "tarea": "Mini proyecto / práctica de la semana: Kaggle: Intermediate Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 42,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-26",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 42,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-27",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 42,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-28",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 43,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-29",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 43,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-30",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 43,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-07-31",
+  "tarea": "Mini proyecto / práctica de la semana: Kaggle: Intermediate Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 43,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-02",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 43,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-03",
+  "tarea": "Estudiar: Kaggle: Intermediate Machine Learning (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 43,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-04",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 44,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-05",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 44,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-06",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 44,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-07",
+  "tarea": "Mini proyecto / práctica de la semana: freeCodeCamp Machine Learning with Python (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 44,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-09",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 44,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-10",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 1)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 44,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-11",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 45,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-12",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 45,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-13",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 45,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-14",
+  "tarea": "Mini proyecto / práctica de la semana: freeCodeCamp Machine Learning with Python (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 45,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-16",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 45,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-17",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 2)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 45,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-18",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 3)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 46,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-19",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 3)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 46,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-20",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 3)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 46,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-21",
+  "tarea": "Mini proyecto / práctica de la semana: freeCodeCamp Machine Learning with Python (parte 3)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 46,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-23",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 3)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 46,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-24",
+  "tarea": "Estudiar: freeCodeCamp Machine Learning with Python (parte 3)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 46,
+  "notas": "freeCodeCamp (freecodecamp.org/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-25",
+  "tarea": "Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 47,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-26",
+  "tarea": "Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 47,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-27",
+  "tarea": "Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 47,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-28",
+  "tarea": "Mini proyecto / práctica de la semana: Minería de datos: limpieza de datos (Kaggle Data Cleaning)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 47,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-30",
+  "tarea": "Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 47,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-08-31",
+  "tarea": "Estudiar: Minería de datos: limpieza de datos (Kaggle Data Cleaning)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 47,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-01",
+  "tarea": "Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 48,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-02",
+  "tarea": "Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 48,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-03",
+  "tarea": "Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 48,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-04",
+  "tarea": "Mini proyecto / práctica de la semana: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 48,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-06",
+  "tarea": "Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 48,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-07",
+  "tarea": "Estudiar: Minería de datos: agrupamiento (clustering) y patrones con scikit-learn",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 48,
+  "notas": "Kaggle Learn (kaggle.com/learn)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-08",
+  "tarea": "Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 49,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-09",
+  "tarea": "Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 49,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-10",
+  "tarea": "Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 49,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-11",
+  "tarea": "Mini proyecto / práctica de la semana: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 49,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-13",
+  "tarea": "Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 49,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-14",
+  "tarea": "Estudiar: IBM SkillsBuild: fundamentos de Inteligencia Artificial (verificar idioma)",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 49,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-15",
+  "tarea": "Estudiar: IBM SkillsBuild: IA aplicada y repaso",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 50,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-16",
+  "tarea": "Estudiar: IBM SkillsBuild: IA aplicada y repaso",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 50,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-17",
+  "tarea": "Estudiar: IBM SkillsBuild: IA aplicada y repaso",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 50,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-18",
+  "tarea": "Mini proyecto / práctica de la semana: IBM SkillsBuild: IA aplicada y repaso",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 50,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-20",
+  "tarea": "Estudiar: IBM SkillsBuild: IA aplicada y repaso",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 50,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-21",
+  "tarea": "Estudiar: IBM SkillsBuild: IA aplicada y repaso",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 50,
+  "notas": "IBM SkillsBuild (skillsbuild.org)",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-22",
+  "tarea": "Estudiar: Proyecto final integrador: datos + automatización + IA",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 51,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-23",
+  "tarea": "Estudiar: Proyecto final integrador: datos + automatización + IA",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 51,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-24",
+  "tarea": "Estudiar: Proyecto final integrador: datos + automatización + IA",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 51,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-25",
+  "tarea": "Mini proyecto / práctica de la semana: Proyecto final integrador: datos + automatización + IA",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 51,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-27",
+  "tarea": "Estudiar: Proyecto final integrador: datos + automatización + IA",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 51,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-28",
+  "tarea": "Estudiar: Proyecto final integrador: datos + automatización + IA",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 51,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-29",
+  "tarea": "Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 52,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-09-30",
+  "tarea": "Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 52,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-10-01",
+  "tarea": "Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 52,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-10-02",
+  "tarea": "Mini proyecto / práctica de la semana: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 52,
+  "notas": "GitHub / Colab",
+  "duracionMin": 45,
+  "prioridad": "Media",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-10-04",
+  "tarea": "Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 52,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ },
+ {
+  "fecha": "2027-10-05",
+  "tarea": "Estudiar: Portafolio en GitHub, recopilar certificados y definir plan del siguiente año",
+  "categoria": "Fase 4 · IA y minería de datos",
+  "semana": 52,
+  "notas": "GitHub / Colab",
+  "duracionMin": 30,
+  "prioridad": "Alta",
+  "estado": "Pendiente"
+ }
+]

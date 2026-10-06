@@ -21,7 +21,7 @@ object NotificationHelper {
     const val CHANNEL_QUIET = "gs_agenda_quiet"
     const val CHANNEL_PLAN = "gs_agenda_plan"
     private const val PLAN_ID = 777001
-    private const val ACCENT = 0xFFD2232A.toInt()
+    private const val ACCENT = 0xFF006686.toInt()
 
     fun notifId(taskId: String) = taskId.hashCode()
 

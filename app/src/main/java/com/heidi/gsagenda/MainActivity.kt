@@ -46,7 +46,7 @@ class MainActivity : Activity() {
     companion object {
         private const val HOST = "appassets.androidplatform.net"
         private const val ORIGIN = "https://$HOST"
-        private const val NAVY = "#142033"
+        private const val NAVY = "#F9F9F9"
         private const val RC_VOICE = 11
         private const val RC_OPEN_SYNC = 12
         private const val RC_CREATE_SYNC = 13
@@ -78,7 +78,7 @@ class MainActivity : Activity() {
             v.setPadding(bars.left, bars.top, bars.right, maxOf(bars.bottom, ime.bottom))
             WindowInsetsCompat.CONSUMED
         }
-        applyBars(NAVY, true)
+        applyBars(NAVY, false)
 
         web.settings.javaScriptEnabled = true
         web.settings.domStorageEnabled = true

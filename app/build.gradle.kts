@@ -11,8 +11,8 @@ android {
         applicationId = "com.heidi.gsagenda"
         minSdk = 26
         targetSdk = 37
-        versionCode = 2
-        versionName = "2.0.0"
+        versionCode = 5
+        versionName = "2.3.0"
     }
 
     // Llave de firma fija: así cada APK nuevo se instala encima del anterior sin desinstalar

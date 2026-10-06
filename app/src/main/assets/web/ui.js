@@ -42,7 +42,7 @@ const UI = {
   list: { show: 'open', prio: '', cat: '' },
   cal: { month: startOfMonth(Date.now()), sel: startOfDay(Date.now()) },
   sort: { k: 'dueAt', dir: 1 },
-  draft: null, lastAct: Date.now(), hiddenAt: 0, fails: 0, waitUntil: 0,
+  draft: null, buddyIdx: 0, lastAct: Date.now(), hiddenAt: 0, fails: 0, waitUntil: 0,
 };
 
 /* ---------- Utilidades de estado ---------- */
@@ -63,7 +63,8 @@ UI.showLock = function (mode) {
   S.unlocked = false; UI.closeEditor(true); UI.closeMenu(); UI.closeModal();
   $('#app').classList.add('hidden');
   const el = $('#lock'); el.classList.remove('hidden');
-  if (IS_ANDROID) { try { Native.setBars('#142033', true); } catch { } }
+  if (IS_ANDROID) { const dk = document.documentElement.dataset.theme === 'dark'; try { Native.setBars(dk ? '#0B1620' : '#F9F9F9', dk); } catch { } }
+  const mark = LS.get('gs.buddy') === false ? '<div class="brand-mark">GS</div>' : buddySVG({ mood: 'happy', cls: 'wave', label: 'Asistente Gestora Social' });
   const bio = IS_ANDROID && LS.get('gs.bio') && (() => { try { return Native.canBiometric(); } catch { return false; } })();
   if (!cryptoReady()) {
     el.innerHTML = `<div class="lock-box"><div class="brand-mark">GS</div><h1>No se puede abrir aquí</h1><p>Este navegador no permite el cifrado que protege tus tareas. Ábrela en Microsoft Edge o Google Chrome actualizados.</p></div>`;
@@ -71,7 +72,7 @@ UI.showLock = function (mode) {
   }
   if (mode === 'create') {
     el.innerHTML = `<form class="lock-box" id="lockForm" autocomplete="off">
-      <div class="brand-mark">GS</div><h1>Crea tu clave de acceso</h1>
+      ${mark}<h1>Crea tu clave de acceso</h1>
       <p>Protege tus tareas con 6 o más caracteres. Si combinas letras y números es más segura. Usa la misma clave en el celular y en el PC: también cifra tu archivo de sincronización.</p>
       <input type="password" id="c1" placeholder="Clave" aria-label="Clave" minlength="6" required>
       <input type="password" id="c2" placeholder="Repite la clave" aria-label="Repite la clave" style="margin-top:10px" required>
@@ -90,7 +91,7 @@ UI.showLock = function (mode) {
     return;
   }
   el.innerHTML = `<form class="lock-box" id="lockForm" autocomplete="off">
-    <div class="brand-mark">GS</div><h1>GS Agenda</h1><p>Escribe tu clave para entrar</p>
+    ${mark}<h1>¡Hola de nuevo!</h1><p>Escribe tu clave para entrar a GS Agenda</p>
     <input type="password" id="c1" placeholder="Clave" aria-label="Clave" required>
     <button class="btn-primary" type="submit">Entrar</button>
     <div class="err" id="lockErr" role="alert"></div>
@@ -160,8 +161,8 @@ UI.applyTheme = function () {
   const dark = pref === 'dark' || (pref === 'auto' && sysDark);
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
   LS.set('gs.theme', pref);
-  const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = dark ? '#151F2E' : '#FFFFFF';
-  if (IS_ANDROID && S.unlocked) { try { Native.setBars(dark ? '#151F2E' : '#FFFFFF', dark); } catch { } }
+  const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = dark ? '#0B1620' : '#F9F9F9';
+  if (IS_ANDROID) { try { Native.setBars(dark ? '#0B1620' : '#F9F9F9', dark); } catch { } }
 };
 
 UI.renderShell = function () {
@@ -282,12 +283,14 @@ function viewDash() {
   const reconnect = S.needsReconnect ? `<div class="banner">${ic('folder')}<div class="grow">Tu carpeta de OneDrive está conectada, pero Edge pide confirmar el permiso en cada inicio.</div><button class="btn btn-sm" data-act="reconnect">Permitir acceso</button></div>` : '';
 
   if (!liveTasks().length) {
+    if (buddyOn()) return `${reconnect}${buddyCard()}${inboxBanner}`;
     return `${reconnect}<div class="dash-head"><div><h1 class="greet">${greeting()}, ${esc(name)}</h1><div class="greet-sub">${fmtLongDate(now)}</div></div></div>
     <div class="panel empty">${ic('dash', 'big')}<h3>Tu tablero se arma con tus tareas</h3><p>Crea la primera y aquí verás tu carga de trabajo, lo vencido y tu cumplimiento.</p><button class="btn-primary" data-act="new">${ic('plus')} Crear tarea</button></div>${inboxBanner}`;
   }
-  return `${reconnect}${inboxBanner}
-  <div class="dash-head">
-    <div><h1 class="greet">${greeting()}, ${esc(name)}</h1><div class="greet-sub">${open.filter(t => isOverdue(t)).length ? `Tienes ${open.filter(t => isOverdue(t)).length} vencidas. ` : ''}${fmtLongDate(now)}</div></div>
+  const slicersOnly = buddyOn();
+  return `${reconnect}${slicersOnly ? buddyCard() : inboxBanner}
+  <div class="${slicersOnly ? 'dash-tools' : 'dash-head'}">
+    ${slicersOnly ? '' : `<div><h1 class="greet">${greeting()}, ${esc(name)}</h1><div class="greet-sub">${open.filter(t => isOverdue(t)).length ? `Tienes ${open.filter(t => isOverdue(t)).length} vencidas. ` : ''}${fmtLongDate(now)}</div></div>`}
     <div class="slicers">
       <div class="seg" role="group" aria-label="Periodo">${[['today', 'Hoy'], ['week', 'Semana'], ['month', 'Mes'], ['all', 'Todo']].map(([k, l]) => `<button class="${UI.dash.period === k ? 'on' : ''}" data-act="period" data-v="${k}">${l}</button>`).join('')}</div>
       <select data-act="dashCat" aria-label="Categoría"><option value="">Todas las categorías</option>${cats.map(c => `<option ${UI.dash.cat === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select>
@@ -297,7 +300,7 @@ function viewDash() {
   <div class="kpis">
     ${kpi('Abiertas', open.length, UI.dash.period === 'all' ? 'todas las fechas' : 'incluye pendientes anteriores', 'var(--c-slate)', 'OPEN')}
     ${kpi('En progreso', all.filter(t => t.status === 'IN_PROGRESS').length, 'trabajando ahora', 'var(--c-indigo)', 'IN_PROGRESS')}
-    ${kpi('Vencidas', open.filter(t => t.dueAt < now).length, 'pasaron su fecha límite', 'var(--c-red)', 'OVERDUE', true)}
+    ${kpi('Vencidas', open.filter(t => t.dueAt < now).length, 'pasaron su fecha límite', 'var(--c-alert)', 'OVERDUE', true)}
     ${kpi('Completadas', done.length, 'en el periodo', 'var(--ok)', 'COMPLETED')}
     <div class="kpi"><div class="k-lbl">Cumplimiento a tiempo</div><div class="k-val">${pct === null ? '–' : pct + '%'}</div><div class="k-foot">${done.length ? `${onTime} de ${done.length} antes de su hora` : 'sin tareas completadas'}</div><i class="k-bar" style="background:linear-gradient(90deg,var(--ok) ${pct || 0}%,var(--line) ${pct || 0}%)"></i></div>
   </div>
@@ -314,7 +317,7 @@ function viewDash() {
 function donutStatus(list) {
   const now = Date.now();
   const items = [
-    { k: 'OVERDUE', l: 'Vencidas', c: 'var(--c-red)', v: list.filter(t => isOverdue(t, now)).length },
+    { k: 'OVERDUE', l: 'Vencidas', c: 'var(--c-alert)', v: list.filter(t => isOverdue(t, now)).length },
     { k: 'PENDING', l: 'Pendientes', c: 'var(--c-slate)', v: list.filter(t => t.status === 'PENDING' && t.dueAt >= now).length },
     { k: 'IN_PROGRESS', l: 'En progreso', c: 'var(--c-indigo)', v: list.filter(t => t.status === 'IN_PROGRESS' && t.dueAt >= now).length },
     { k: 'WAITING', l: 'En espera', c: 'var(--c-amber)', v: list.filter(t => t.status === 'WAITING' && t.dueAt >= now).length },
@@ -356,12 +359,12 @@ function colLoad(list) {
   const bars = cols.map((c, i) => {
     const x = pl + i * cw + (cw - bw) / 2; let acc = 0;
     const seg = (n, col) => { if (!n) return ''; const y1 = y(acc + n), hh = y(acc) - y1; acc += n; return `<rect x="${x}" y="${y1}" width="${bw}" height="${Math.max(hh - 1, 1)}" rx="2" fill="${col}"/>`; };
-    const stack = c.late ? seg(c.n, 'var(--c-red)') : seg(c.l, 'var(--c-teal)') + seg(c.m, 'var(--c-amber)') + seg(c.h, 'var(--c-red)');
+    const stack = c.late ? seg(c.n, 'var(--c-alert)') : seg(c.l, 'var(--c-teal)') + seg(c.m, 'var(--c-violet)') + seg(c.h, 'var(--c-alert)');
     const dim = sel && sel !== c.k ? .25 : 1;
     return `<g class="clk" data-act="xf" data-dim="day" data-val="${c.k}" opacity="${dim}"><title>${c.late ? 'Atrasadas' : fmtDate(+c.k)}: ${c.n}</title>
       <rect x="${pl + i * cw}" y="${pt}" width="${cw}" height="${ch + pb}" fill="${c.we ? 'var(--panel-2)' : 'transparent'}"/>${stack}
       ${c.n ? `<text x="${x + bw / 2}" y="${y(c.n) - 5}" text-anchor="middle" style="fill:var(--ink);font-weight:600">${c.n}</text>` : ''}
-      <text x="${x + bw / 2}" y="${H - pb + 16}" text-anchor="middle" style="${c.top === 'Hoy' ? 'fill:var(--gs);font-weight:700' : c.late ? 'fill:var(--c-red);font-weight:600' : ''}">${c.late ? 'Atras.' : c.top}</text>
+      <text x="${x + bw / 2}" y="${H - pb + 16}" text-anchor="middle" style="${c.top === 'Hoy' ? 'fill:var(--gs);font-weight:700' : c.late ? 'fill:var(--c-alert);font-weight:600' : ''}">${c.late ? 'Atras.' : c.top}</text>
       <text x="${x + bw / 2}" y="${H - pb + 31}" text-anchor="middle">${c.bot}</text></g>`;
   }).join('');
   const sep = `<line x1="${pl + cw}" x2="${pl + cw}" y1="${pt}" y2="${H - pb + 34}" stroke="var(--line)" stroke-dasharray="3 3"/>`;
@@ -401,7 +404,7 @@ function viewPlan() {
   const hrs = Math.round(p.busyMin / 6) / 10;
   const head = `<div class="plan-head"><div><h1 class="greet">${p.forTomorrow ? 'Tu jornada terminó. Así queda mañana' : 'Plan para hoy'}</h1>
     <div class="greet-sub">${fmtLongDate(p.day0)}, jornada de ${fmtTime(p.ws)} a ${fmtTime(p.we)}${st.planEnabled ? `<br>Lo recibes cada día a las ${fmtTime(startOfDay(now) + parseHM(st.planTime))}` : ''}</div></div>
-    <div class="plan-sum"><div><b>${p.blocks.length}</b>programadas</div><div><b>${hrs}</b>horas ocupadas</div><div><b style="${p.overdue ? 'color:var(--c-red)' : ''}">${p.overdue}</b>vencidas incluidas</div><div><b>${p.overflow.length}</b>no alcanzan</div></div></div>`;
+    <div class="plan-sum"><div><b>${p.blocks.length}</b>programadas</div><div><b>${hrs}</b>horas ocupadas</div><div><b style="${p.overdue ? 'color:var(--c-alert)' : ''}">${p.overdue}</b>vencidas incluidas</div><div><b>${p.overflow.length}</b>no alcanzan</div></div></div>`;
   if (!p.blocks.length && !p.overflow.length && !p.waiting.length) {
     return head + `<div class="panel empty">${ic('plan', 'big')}<h3>Nada urgente ${p.forTomorrow ? 'para mañana' : 'por hoy'}</h3><p>No hay tareas vencidas, ni con fecha ${p.forTomorrow ? 'de mañana' : 'de hoy'}, ni en progreso. Buen momento para adelantar lo que viene.</p><button class="btn-primary" data-act="new">${ic('plus')} Nueva tarea</button></div>`;
   }
@@ -535,11 +538,13 @@ function viewSettings() {
   <section class="panel"><h3>Notificaciones</h3><div class="p-sub">Recordatorios de tus tareas</div>${notifPanel}</section>
   <section class="panel"><h3>Apariencia</h3><div class="p-sub">Tema y nombre</div>
     <div class="set-row"><div class="t">Tema</div><div class="seg">${[['auto', 'Automático'], ['light', 'Claro'], ['dark', 'Oscuro']].map(([k, l]) => `<button class="${st.theme === k ? 'on' : ''}" data-act="setTheme" data-v="${k}">${l}</button>`).join('')}</div></div>
+    <div class="set-row"><div><div class="t">Mostrar a tu asistente</div><div class="d">La Gestora Social te saluda, te sugiere por dónde empezar y celebra tus avances</div></div>${sw('setBuddy', st.buddy !== false, 'Mostrar asistente')}</div>
     <div class="set-row"><div class="t">Tu nombre</div><input class="input" style="width:180px" data-act="setName" value="${esc(st.name)}" aria-label="Tu nombre"></div></section>
   <section class="panel"><h3>Datos</h3><div class="p-sub">Llévalos a Excel o Power BI, o guarda una copia</div>
     <div class="set-row"><div><div class="t">Exportar a Excel</div><div class="d">Archivo CSV con todas tus tareas, listo para Excel o Power BI</div></div><button class="btn btn-sm" data-act="exportCsv">${ic('download')} Exportar</button></div>
     <div class="set-row"><div><div class="t">Copia de seguridad</div><div class="d">Archivo cifrado con tu clave</div></div><button class="btn btn-sm" data-act="backup">${ic('download')} Guardar copia</button></div>
     <div class="set-row"><div><div class="t">Restaurar copia</div><div class="d">Se combina con tus tareas actuales, no las reemplaza</div></div><button class="btn btn-sm" data-act="restore">${ic('upload')} Restaurar</button></div>
+    <div class="set-row"><div><div class="t">Importar tareas</div><div class="d">Carga un archivo CSV o JSON, por ejemplo tu plan de estudio</div></div><button class="btn btn-sm" data-act="importar">${ic('upload')} Importar</button></div>
     <input type="file" id="restoreFile" accept=".datos,.json,application/json" class="hidden"></section>
   </div>`;
 }
@@ -668,7 +673,7 @@ function modal(title, bodyHtml, actions) {
   UI.closeModal();
   return new Promise(res => {
     const m = document.createElement('div'); m.id = 'modal'; m.className = 'modal';
-    m.innerHTML = `<div class="scrim" data-x></div><div class="card" role="dialog" aria-modal="true" aria-labelledby="mH"><h3 id="mH">${esc(title)}</h3>${bodyHtml}<div class="acts">${actions.map((a, i) => `<button class="${a.primary ? 'btn-primary' : 'btn'} ${a.danger ? 'btn-danger' : ''}" data-ma="${i}" ${a.danger && a.primary ? 'style="background:var(--c-red);border-color:var(--c-red)"' : ''}>${esc(a.label)}</button>`).join('')}</div></div>`;
+    m.innerHTML = `<div class="scrim" data-x></div><div class="card" role="dialog" aria-modal="true" aria-labelledby="mH"><h3 id="mH">${esc(title)}</h3>${bodyHtml}<div class="acts">${actions.map((a, i) => `<button class="${a.primary ? 'btn-primary' : 'btn'} ${a.danger ? 'btn-danger' : ''}" data-ma="${i}" ${a.danger && a.primary ? 'style="background:var(--c-alert);border-color:var(--c-alert);color:#fff"' : ''}>${esc(a.label)}</button>`).join('')}</div></div>`;
     document.body.appendChild(m);
     UI._modalResolve = res;
     const done = v => { UI._modalResolve = null; m.remove(); res(v); };
@@ -687,6 +692,7 @@ UI.askFileCode = function (env) {
 /* ================= ACCIONES ================= */
 const ACT = {
   go: el => UI.go(el.dataset.v),
+  buddyNext: el => buddyNext(el),
   new: () => UI.openEditor(null),
   newOn: el => { const d = +el.dataset.d; UI.openEditor(null, { dueAt: d + 9 * HOUR }); },
   edit: el => { const t = getTask(el.dataset.id); if (t) UI.openEditor(t); },
@@ -696,7 +702,7 @@ const ACT = {
     el.classList.add('pop');
     setTimeout(() => {
       commit(() => setStatus(t, t.status === 'COMPLETED' ? 'PENDING' : 'COMPLETED'));
-      if (t.status === 'COMPLETED') UI.toast(`“${t.title}” lista`, () => commit(() => { t.status = prev.status; t.completedAt = prev.completedAt; touch(t); }));
+      if (t.status === 'COMPLETED') { UI.toast(`“${t.title}” lista`, () => commit(() => { t.status = prev.status; t.completedAt = prev.completedAt; touch(t); })); buddyCelebrate(); }
     }, 180);
   },
   statusMenu: el => {
@@ -777,6 +783,7 @@ const CHANGE = {
   setTime: el => { if (el.value) setSetting(el.dataset.k, el.value); },
   setLock: el => setSetting('lockMinutes', +el.value),
   setName: el => setSetting('name', el.value.trim() || 'Heidi'),
+  setBuddy: el => { LS.set('gs.buddy', el.checked); setSetting('buddy', el.checked); },
   setBio: async el => {
     if (el.checked) { try { Native.secretSet('code', S.code); LS.set('gs.bio', true); UI.toast('Huella activada'); } catch { el.checked = false; } }
     else { try { Native.secretSet('code', ''); } catch { } LS.del('gs.bio'); UI.toast('Huella desactivada'); }
