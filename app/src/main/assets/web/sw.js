@@ -1,5 +1,5 @@
 /* GS Agenda: permite abrir la app sin internet en el PC. No guarda tus tareas, solo los archivos de la app. */
-const CACHE = 'gs-agenda-v2.3.0';
+const CACHE = 'gs-agenda-v2.3.1';
 const FILES = ['./', './index.html', './styles.css', './core.js', './buddy.js', './ui.js', './importar.js', './icon.svg', './manifest.webmanifest'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k))))); self.clients.claim(); });

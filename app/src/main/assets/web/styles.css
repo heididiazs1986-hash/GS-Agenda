@@ -473,3 +473,7 @@ button.kpi:hover{background:var(--gs-soft)}
 
 :root[data-theme="dark"] .badge{color:#2A1200}
 :root[data-theme="dark"] .bottom .badge{color:#2A1200}
+
+/* Crédito discreto */
+.lock-box::after{content:"Desarrollado por Heidi Díaz";display:block;text-align:center;font:600 11.5px/1.4 Inter,"Segoe UI",Arial,sans-serif;opacity:.6;margin-top:18px}
+#inner::after{content:"Desarrollado por Heidi Díaz";display:block;text-align:center;font:600 11.5px/1.4 Inter,"Segoe UI",Arial,sans-serif;opacity:.55;padding:22px 0 10px}
