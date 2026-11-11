@@ -282,6 +282,7 @@ async function adoptFileCode(code, env) {
   try { await openWith(code, env); } catch { return false; }
   await setCode(code); await reencryptLocal();
   if (IS_ANDROID && LS.get('gs.bio')) { try { Native.secretSet('code', code); } catch { } }
+  if (typeof Huella !== 'undefined' && Huella.enabled()) Huella.disable();
   await syncNow(true);
   return true;
 }

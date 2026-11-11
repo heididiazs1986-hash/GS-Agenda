@@ -69,7 +69,9 @@ UI.showLock = function (mode) {
   const el = $('#lock'); el.classList.remove('hidden');
   if (IS_ANDROID) { const dk = document.documentElement.dataset.theme === 'dark'; try { Native.setBars(dk ? '#12161A' : '#FEFEFF', dk); } catch { } }
   const mark = `<div class="lock-hero">${gsScene('dash', 'lock-svg')}</div><div class="brand-mark lock-logo">GS</div>`;
-  const bio = IS_ANDROID && LS.get('gs.bio') && (() => { try { return Native.canBiometric(); } catch { return false; } })();
+  const bioNative = IS_ANDROID && LS.get('gs.bio') && (() => { try { return Native.canBiometric(); } catch { return false; } })();
+  const bioWeb = mode === 'unlock' && Huella.enabled();
+  const bio = bioNative || bioWeb;
   if (!cryptoReady()) {
     el.innerHTML = `<div class="lock-box"><div class="brand-mark">GS</div><h1>No se puede abrir aquí</h1><p>Este navegador no permite el cifrado que protege tus tareas. Ábrela en Microsoft Edge o Google Chrome actualizados.</p></div>`;
     return;
@@ -112,14 +114,27 @@ UI.showLock = function (mode) {
       $('#lockErr').textContent = 'Clave incorrecta.'; $('#c1').select();
     }
   };
-  if (bio) {
+  if (bioNative) {
     $('#bioBtn').onclick = () => { try { Native.biometric(); } catch { } };
     setTimeout(() => { try { Native.biometric(); } catch { } }, 350);
+  }
+  if (bioWeb) {
+    const go = async () => {
+      if (S.unlocked) return; const er = $('#lockErr'); if (er) er.textContent = '';
+      try {
+        const code = await Huella.unlock();
+        if (S.unlocked) return;
+        if (code && await verifyCode(code)) { UI.fails = 0; await UI.enter(false); }
+        else { if (er) er.textContent = 'Escribe tu clave; vuelve a activar la huella en Ajustes.'; await Huella.disable(); }
+      } catch (e) { const x = $('#lockErr'); if (x) x.textContent = 'No se pudo leer la huella. Puedes escribir tu clave.'; }
+    };
+    $('#bioBtn').onclick = go;
+    setTimeout(go, 350);
   }
   $('#forgot').onclick = async () => {
     const ok = await UI.confirm('Restablecer la app en este dispositivo', 'Sin la clave no es posible leer tus tareas cifradas. Puedes empezar de cero: se borrarán las tareas guardadas en este dispositivo y la conexión con el archivo. El archivo de OneDrive no se modifica, pero solo podrás abrirlo con la clave anterior.', 'Borrar y empezar de cero', true);
     if (!ok) return;
-    ['gs.lock', 'gs.salt', 'gs.vault', 'gs.bio', 'gs.syncName', 'gs.lastSync', 'gs.fired'].forEach(LS.del);
+    ['gs.lock', 'gs.salt', 'gs.vault', 'gs.bio', 'gs.wa', 'gs.waAsked', 'gs.syncName', 'gs.lastSync', 'gs.fired'].forEach(LS.del); Huella.disable();
     if (IS_ANDROID) { try { Native.saveState(''); Native.secretSet('code', ''); Native.disconnectSyncFile(); } catch { } }
     else await IDB.del('dir');
     UI.showLock('create');
@@ -133,6 +148,7 @@ nativeHandlers.biometric = async ok => {
 };
 
 UI.enter = async function (fresh) {
+  UI._waAvail = await Huella.available();
   try { S.state = await loadLocal(); }
   catch (e) { console.warn(e); S.state = defaultState(); }
   S.unlocked = true; UI.lastAct = Date.now();
@@ -154,6 +170,27 @@ UI.enter = async function (fresh) {
     }
     try { Native.requestNotifications(); } catch { }
   }
+  UI.offerBio(fresh);
+};
+/* Ofrece la huella una sola vez (clave nueva o primera vez después de esta mejora) */
+UI.offerBio = async function (fresh) {
+  try {
+    if (S.sync && LS.get('gs.bioAsked')) return;
+    if (IS_ANDROID) {
+      let can = false; try { can = Native.canBiometric(); } catch { }
+      if (!can || LS.get('gs.bio') || fresh) return;
+      LS.set('gs.bioAsked', true);
+      if (await UI.confirm('¿Entrar con huella?', 'Podrás desbloquear GS Agenda con tu huella en lugar de escribir la clave.', 'Activar huella')) { try { Native.secretSet('code', S.code); LS.set('gs.bio', true); UI.toast('Huella activada'); } catch { } }
+      return;
+    }
+    if (Huella.enabled() || !(await Huella.available())) return;
+    LS.set('gs.bioAsked', true);
+    if (await UI.confirm('¿Entrar con huella?', 'Podrás desbloquear GS Agenda con tu huella (o Windows Hello) en lugar de escribir la clave. Si algo falla, la clave sigue funcionando.', 'Activar huella')) UI.enableBioWeb();
+  } catch { }
+};
+UI.enableBioWeb = async function (sw) {
+  try { const m = await Huella.enable(S.code); UI.toast('Huella activada'); if (m === 'gate') console.info('huella: modo puerta'); return true; }
+  catch (e) { if (sw) sw.checked = false; UI.toast(e && e.name === 'NotAllowedError' ? 'Huella cancelada' : 'No se pudo activar la huella en este equipo'); return false; }
 };
 UI.lockNow = async function () {
   UI.flushNotes();
@@ -518,6 +555,7 @@ function viewInbox() {
 function viewSettings() {
   const st = S.state.settings;
   let bioAvail = false; if (IS_ANDROID) { try { bioAvail = Native.canBiometric(); } catch { } }
+  const waAvail = !IS_ANDROID && UI._waAvail;
   const sw = (act, on, label) => `<label class="switch"><input type="checkbox" data-act="${act}" ${on ? 'checked' : ''} aria-label="${label}"><span></span></label>`;
   const connected = syncConnected();
   const syncPanel = IS_ANDROID ? `
@@ -543,6 +581,7 @@ function viewSettings() {
     <div class="set-row"><div class="t">Fin de jornada</div><input type="time" data-act="setTime" data-k="workEnd" value="${st.workEnd}" aria-label="Fin de jornada"></div></section>
   <section class="panel"><h3>Seguridad</h3><div class="p-sub">Solo tú puedes abrir GS Agenda</div>
     <div class="set-row"><div><div class="t">Clave de acceso</div><div class="d">También cifra el archivo de sincronización. Si la cambias aquí, el otro dispositivo te pedirá la nueva.</div></div><button class="btn btn-sm" data-act="changeCode">Cambiar</button></div>
+    ${waAvail ? `<div class="set-row"><div><div class="t">Desbloquear con huella</div><div class="d">Usa la huella o Windows Hello de este equipo en lugar de escribir la clave</div></div>${sw('setWa', Huella.enabled(), 'Desbloquear con huella')}</div>` : ''}
     ${bioAvail ? `<div class="set-row"><div><div class="t">Desbloquear con huella</div><div class="d">Usa el sensor del celular en lugar de la clave</div></div>${sw('setBio', !!LS.get('gs.bio'), 'Desbloquear con huella')}</div>` : ''}
     <div class="set-row"><div class="t">Bloquear tras inactividad</div><select class="input" style="width:auto" data-act="setLock" aria-label="Bloquear tras inactividad">${[[1, '1 minuto'], [5, '5 minutos'], [15, '15 minutos'], [30, '30 minutos'], [0, 'Nunca']].map(([v, l]) => `<option value="${v}" ${+st.lockMinutes === v ? 'selected' : ''}>${l}</option>`).join('')}</select></div>
     <div class="set-row"><div class="t">Bloquear ahora</div><button class="btn btn-sm" data-act="lock">${ic('lock')} Bloquear</button></div></section>
@@ -785,6 +824,7 @@ const ACT = {
         if (a !== m.querySelector('#k2').value) { e.textContent = 'Las claves nuevas no coinciden.'; return false; }
         await setCode(a); await reencryptLocal();
         if (IS_ANDROID && LS.get('gs.bio')) { try { Native.secretSet('code', a); } catch { } }
+        if (Huella.enabled()) { await Huella.disable(); setTimeout(() => UI.toast('Vuelve a activar la huella en Ajustes'), 400); }
         return true;
       } }]);
     if (v) { UI.toast('Clave cambiada'); scheduleSync(300); }
@@ -804,6 +844,7 @@ const CHANGE = {
   setTime: el => { if (el.value) setSetting(el.dataset.k, el.value); },
   setLock: el => setSetting('lockMinutes', +el.value),
   setName: el => setSetting('name', el.value.trim() || 'Heidi'),
+  setWa: async el => { if (el.checked) await UI.enableBioWeb(el); else { await Huella.disable(); UI.toast('Huella desactivada'); } },
   setBio: async el => {
     if (el.checked) { try { Native.secretSet('code', S.code); LS.set('gs.bio', true); UI.toast('Huella activada'); } catch { el.checked = false; } }
     else { try { Native.secretSet('code', ''); } catch { } LS.del('gs.bio'); UI.toast('Huella desactivada'); }
