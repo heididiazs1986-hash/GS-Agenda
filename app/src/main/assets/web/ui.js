@@ -331,7 +331,7 @@ function donutStatus(list) {
     { k: 'OVERDUE', l: 'Vencidas', c: 'var(--c-alert)', v: list.filter(t => isOverdue(t, now)).length },
     { k: 'PENDING', l: 'Pendientes', c: 'var(--c-slate)', v: list.filter(t => t.status === 'PENDING' && t.dueAt >= now).length },
     { k: 'IN_PROGRESS', l: 'En progreso', c: 'var(--c-indigo)', v: list.filter(t => t.status === 'IN_PROGRESS' && t.dueAt >= now).length },
-    { k: 'WAITING', l: 'En espera', c: 'var(--c-amber)', v: list.filter(t => t.status === 'WAITING' && t.dueAt >= now).length },
+    { k: 'WAITING', l: 'En espera', c: 'var(--c-dark)', v: list.filter(t => t.status === 'WAITING' && t.dueAt >= now).length },
     { k: 'COMPLETED', l: 'Completadas', c: 'var(--ok)', v: list.filter(t => t.status === 'COMPLETED').length },
   ];
   const total = items.reduce((s, i) => s + i.v, 0), sel = UI.dash.f.status;
@@ -370,7 +370,7 @@ function colLoad(list) {
   const bars = cols.map((c, i) => {
     const x = pl + i * cw + (cw - bw) / 2; let acc = 0;
     const seg = (n, col) => { if (!n) return ''; const y1 = y(acc + n), hh = y(acc) - y1; acc += n; return `<rect x="${x}" y="${y1}" width="${bw}" height="${Math.max(hh - 1, 1)}" rx="2" fill="${col}"/>`; };
-    const stack = c.late ? seg(c.n, 'var(--c-alert)') : seg(c.l, 'var(--c-teal)') + seg(c.m, 'var(--c-violet)') + seg(c.h, 'var(--c-alert)');
+    const stack = c.late ? seg(c.n, 'var(--c-alert)') : seg(c.l, 'var(--c-slate)') + seg(c.m, 'var(--c-teal)') + seg(c.h, 'var(--c-alert)');
     const dim = sel && sel !== c.k ? .25 : 1;
     return `<g class="clk" data-act="xf" data-dim="day" data-val="${c.k}" opacity="${dim}"><title>${c.late ? 'Atrasadas' : fmtDate(+c.k)}: ${c.n}</title>
       <rect x="${pl + i * cw}" y="${pt}" width="${cw}" height="${ch + pb}" fill="${c.we ? 'var(--panel-2)' : 'transparent'}"/>${stack}

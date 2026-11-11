@@ -12,9 +12,9 @@ const INBOX_DIR = 'solicitudes';
 const uid = () => 't' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 
 const STATUS = { PENDING: 'Pendiente', IN_PROGRESS: 'En progreso', WAITING: 'En espera', COMPLETED: 'Completada' };
-const STATUS_COLOR = { PENDING: 'var(--c-slate)', IN_PROGRESS: 'var(--c-indigo)', WAITING: 'var(--c-amber)', COMPLETED: 'var(--ok)' };
+const STATUS_COLOR = { PENDING: 'var(--c-slate)', IN_PROGRESS: 'var(--c-indigo)', WAITING: 'var(--c-dark)', COMPLETED: 'var(--ok)' };
 const PRIO = { HIGH: 'Alta', MEDIUM: 'Media', LOW: 'Baja' };
-const PRIO_COLOR = { HIGH: 'var(--c-alert)', MEDIUM: 'var(--c-violet)', LOW: 'var(--c-teal)' };
+const PRIO_COLOR = { HIGH: 'var(--c-alert)', MEDIUM: 'var(--c-teal)', LOW: 'var(--c-slate)' };
 const PRIO_RANK = { HIGH: 0, MEDIUM: 1, LOW: 2 };
 const REPEAT = { NONE: 'No se repite', DAILY: 'Cada día', WEEKLY: 'Cada semana', MONTHLY: 'Cada mes' };
 const REMINDER_OPTS = [[0, 'A la hora'], [15, '15 min antes'], [30, '30 min antes'], [60, '1 hora antes'], [1440, '1 día antes']];
