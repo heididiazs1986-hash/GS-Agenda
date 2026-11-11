@@ -4,6 +4,10 @@
 const ICON = {
   dash: '<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>',
   plan: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  note: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/>',
+  copy: '<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/>',
+  share: '<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.6M8.2 13.2l7.6 4.6"/>',
+  pin: '<path d="M9 3h6l-1 6 3 3v2H7v-2l3-3z"/><path d="M12 14v7"/>',
   tasks: '<path d="M10 6h10M10 12h10M10 18h10"/><path d="M3.5 6l1.3 1.3L7.3 5M3.5 12l1.3 1.3 2.5-2.3M3.5 18l1.3 1.3 2.5-2.3"/>',
   cal: '<rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 3v3M16 3v3"/>',
   inbox: '<path d="M3 13l2.5-7.5A2 2 0 0 1 7.4 4h9.2a2 2 0 0 1 1.9 1.5L21 13v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 13h5l1.5 2.5h5L16 13h5"/>',
@@ -32,7 +36,7 @@ const ICON = {
 const ic = (n, cls = '') => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICON[n] || ''}</svg>`;
 
 const VIEWS = [
-  ['dash', 'Tablero', 'dash'], ['plan', 'Plan de hoy', 'plan'], ['tasks', 'Tareas', 'tasks'],
+  ['dash', 'Tablero', 'dash'], ['plan', 'Plan de hoy', 'plan'], ['tasks', 'Tareas', 'tasks'], ['notes', 'Notas rápidas', 'note'],
   ['cal', 'Calendario', 'cal'], ['inbox', 'Solicitudes', 'inbox'], ['settings', 'Ajustes', 'settings'],
 ];
 
@@ -42,7 +46,7 @@ const UI = {
   list: { show: 'open', prio: '', cat: '' },
   cal: { month: startOfMonth(Date.now()), sel: startOfDay(Date.now()) },
   sort: { k: 'dueAt', dir: 1 },
-  draft: null, buddyIdx: 0, lastAct: Date.now(), hiddenAt: 0, fails: 0, waitUntil: 0,
+  draft: null, noteDraft: '', lastAct: Date.now(), hiddenAt: 0, fails: 0, waitUntil: 0,
 };
 
 /* ---------- Utilidades de estado ---------- */
@@ -63,8 +67,8 @@ UI.showLock = function (mode) {
   S.unlocked = false; UI.closeEditor(true); UI.closeMenu(); UI.closeModal();
   $('#app').classList.add('hidden');
   const el = $('#lock'); el.classList.remove('hidden');
-  if (IS_ANDROID) { const dk = document.documentElement.dataset.theme === 'dark'; try { Native.setBars(dk ? '#0B1620' : '#F9F9F9', dk); } catch { } }
-  const mark = LS.get('gs.buddy') === false ? '<div class="brand-mark">GS</div>' : buddySVG({ mood: 'happy', cls: 'wave', label: 'Asistente Gestora Social' });
+  if (IS_ANDROID) { const dk = document.documentElement.dataset.theme === 'dark'; try { Native.setBars(dk ? '#12161A' : '#FEFEFF', dk); } catch { } }
+  const mark = `<div class="lock-hero">${gsScene('dash', 'lock-svg')}</div><div class="brand-mark lock-logo">GS</div>`;
   const bio = IS_ANDROID && LS.get('gs.bio') && (() => { try { return Native.canBiometric(); } catch { return false; } })();
   if (!cryptoReady()) {
     el.innerHTML = `<div class="lock-box"><div class="brand-mark">GS</div><h1>No se puede abrir aquí</h1><p>Este navegador no permite el cifrado que protege tus tareas. Ábrela en Microsoft Edge o Google Chrome actualizados.</p></div>`;
@@ -151,7 +155,11 @@ UI.enter = async function (fresh) {
     try { Native.requestNotifications(); } catch { }
   }
 };
-UI.lockNow = function () { S.state = null; S.code = null; S.keys.clear(); S.inbox = []; UI.showLock('unlock'); };
+UI.lockNow = async function () {
+  UI.flushNotes();
+  try { if (!IS_ANDROID && S.state && S.code) { clearTimeout(saveTimer); await reencryptLocal(); } } catch { }
+  S.state = null; S.code = null; S.keys.clear(); S.inbox = []; UI.showLock('unlock');
+};
 
 /* ================= ESTRUCTURA ================= */
 UI.applyTheme = function () {
@@ -161,8 +169,8 @@ UI.applyTheme = function () {
   const dark = pref === 'dark' || (pref === 'auto' && sysDark);
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
   LS.set('gs.theme', pref);
-  const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = dark ? '#0B1620' : '#F9F9F9';
-  if (IS_ANDROID) { try { Native.setBars(dark ? '#0B1620' : '#F9F9F9', dark); } catch { } }
+  const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = dark ? '#12161A' : '#FEFEFF';
+  if (IS_ANDROID) { try { Native.setBars(dark ? '#12161A' : '#FEFEFF', dark); } catch { } }
 };
 
 UI.renderShell = function () {
@@ -175,20 +183,23 @@ UI.renderShell = function () {
     <button class="nav-btn" data-act="lock">${ic('lock')} Bloquear</button>
   </nav>
   <section class="main">
+    <div class="bgscene" id="bgscene" aria-hidden="true"></div>
     <header class="top">
       <div><h2 id="viewTitle"></h2><div class="sub" id="viewSub"></div></div>
       <div class="grow"></div>
       <label class="search">${ic('search')}<input id="q" type="search" placeholder="Buscar tareas" aria-label="Buscar tareas" value="${esc(UI.q)}"></label>
       <button class="icon-btn" data-act="syncPill" id="syncTop" aria-label="Sincronizar" style="display:none"></button>
+      <button class="btn new-top" data-act="quickNote">${ic('note')} Nota rápida</button>
       <button class="btn-primary new-top" data-act="new">${ic('plus')} Nueva tarea</button>
     </header>
     <main class="content" id="content"><div class="content-inner" id="inner"></div></main>
   </section>
   <nav class="bottom" id="bottomNav" aria-label="Secciones"></nav>
+  <button class="fab fab-note" data-act="quickNote" aria-label="Nota rápida">${ic('note')}</button>
   <button class="fab" data-act="new" aria-label="Nueva tarea">${ic('plus')}</button>`;
   $('#q').addEventListener('input', e => {
     UI.q = e.target.value;
-    if (UI.view !== 'tasks' && UI.view !== 'dash') UI.go('tasks'); else UI.renderContent();
+    if (UI.view !== 'tasks' && UI.view !== 'dash' && UI.view !== 'notes') UI.go('tasks'); else UI.renderContent();
   });
   if (matchMedia('(max-width:860px)').matches) $('#syncTop').style.display = '';
   UI.renderNav(); UI.renderSyncBadge();
@@ -201,7 +212,7 @@ UI.renderNav = function () {
   $('#navList').innerHTML = VIEWS.filter(v => !(IS_ANDROID && v[0] === 'inbox')).map(([k, label, icon]) =>
     `<button class="nav-btn ${UI.view === k ? 'on' : ''}" data-act="go" data-v="${k}" ${UI.view === k ? 'aria-current="page"' : ''}>${ic(icon)} ${label}
       ${k === 'inbox' && n ? `<span class="badge">${n}</span>` : ''}${k === 'tasks' && overdue ? `<span class="badge">${overdue}</span>` : ''}</button>`).join('');
-  const mob = [['dash', 'Tablero', 'dash'], ['plan', 'Plan', 'plan'], ['tasks', 'Tareas', 'tasks'], ['cal', 'Calendario', 'cal'], ['settings', 'Ajustes', 'settings']];
+  const mob = [['dash', 'Tablero', 'dash'], ['plan', 'Hoy', 'plan'], ['tasks', 'Tareas', 'tasks'], ['notes', 'Notas', 'note'], ['cal', 'Agenda', 'cal'], ['settings', 'Ajustes', 'settings']];
   $('#bottomNav').innerHTML = mob.map(([k, label, icon]) =>
     `<button class="${UI.view === k ? 'on' : ''}" data-act="go" data-v="${k}">${ic(icon)}${label}${k === 'tasks' && overdue ? `<span class="badge">${overdue}</span>` : ''}</button>`).join('');
 };
@@ -219,7 +230,7 @@ UI.renderSyncBadge = function () {
 
 const SUBS = {
   dash: () => fmtLongDate(Date.now()), plan: () => 'Ordenado por urgencia dentro de tu jornada',
-  tasks: () => `${liveTasks().filter(isOpen).length} abiertas`, cal: () => 'Vista mensual', inbox: () => 'Correos marcados para convertir en tareas', settings: () => `Versión ${APP_VERSION}`,
+  tasks: () => `${liveTasks().filter(isOpen).length} abiertas`, notes: () => `${liveNotes().length} ${liveNotes().length === 1 ? 'nota' : 'notas'} guardadas`, cal: () => 'Vista mensual', inbox: () => 'Correos marcados para convertir en tareas', settings: () => `Versión ${APP_VERSION}`,
 };
 UI.go = function (v) {
   UI.view = v; history.replaceState(null, '', '#' + v);
@@ -231,8 +242,9 @@ UI.go = function (v) {
 UI.render = function () { if (!S.unlocked) return; UI.renderNav(); UI.renderContent(); };
 UI.renderContent = function () {
   if (!S.unlocked) return;
-  const f = { dash: viewDash, plan: viewPlan, tasks: viewTasks, cal: viewCal, inbox: viewInbox, settings: viewSettings }[UI.view];
-  $('#inner').innerHTML = f();
+  const f = { dash: viewDash, plan: viewPlan, tasks: viewTasks, notes: viewNotes, cal: viewCal, inbox: viewInbox, settings: viewSettings }[UI.view];
+  const bg = $('#bgscene'); if (bg && bg.dataset.v !== UI.view) { bg.dataset.v = UI.view; bg.innerHTML = gsScene(UI.view); }
+  $('#inner').innerHTML = (UI.view === 'tasks' || UI.view === 'plan' ? qaddBar() : '') + f();
   $('#viewSub').textContent = SUBS[UI.view]();
 };
 
@@ -283,12 +295,11 @@ function viewDash() {
   const reconnect = S.needsReconnect ? `<div class="banner">${ic('folder')}<div class="grow">Tu carpeta de OneDrive está conectada, pero Edge pide confirmar el permiso en cada inicio.</div><button class="btn btn-sm" data-act="reconnect">Permitir acceso</button></div>` : '';
 
   if (!liveTasks().length) {
-    if (buddyOn()) return `${reconnect}${buddyCard()}${inboxBanner}`;
-    return `${reconnect}<div class="dash-head"><div><h1 class="greet">${greeting()}, ${esc(name)}</h1><div class="greet-sub">${fmtLongDate(now)}</div></div></div>
+    return `${reconnect}${heroHtml()}${qaddBar()}${inboxBanner}
     <div class="panel empty">${ic('dash', 'big')}<h3>Tu tablero se arma con tus tareas</h3><p>Crea la primera y aquí verás tu carga de trabajo, lo vencido y tu cumplimiento.</p><button class="btn-primary" data-act="new">${ic('plus')} Crear tarea</button></div>${inboxBanner}`;
   }
-  const slicersOnly = buddyOn();
-  return `${reconnect}${slicersOnly ? buddyCard() : inboxBanner}
+  const slicersOnly = true;
+  return `${reconnect}${heroHtml()}${qaddBar()}${inboxBanner}
   <div class="${slicersOnly ? 'dash-tools' : 'dash-head'}">
     ${slicersOnly ? '' : `<div><h1 class="greet">${greeting()}, ${esc(name)}</h1><div class="greet-sub">${open.filter(t => isOverdue(t)).length ? `Tienes ${open.filter(t => isOverdue(t)).length} vencidas. ` : ''}${fmtLongDate(now)}</div></div>`}
     <div class="slicers">
@@ -538,7 +549,6 @@ function viewSettings() {
   <section class="panel"><h3>Notificaciones</h3><div class="p-sub">Recordatorios de tus tareas</div>${notifPanel}</section>
   <section class="panel"><h3>Apariencia</h3><div class="p-sub">Tema y nombre</div>
     <div class="set-row"><div class="t">Tema</div><div class="seg">${[['auto', 'Automático'], ['light', 'Claro'], ['dark', 'Oscuro']].map(([k, l]) => `<button class="${st.theme === k ? 'on' : ''}" data-act="setTheme" data-v="${k}">${l}</button>`).join('')}</div></div>
-    <div class="set-row"><div><div class="t">Mostrar a tu asistente</div><div class="d">La Gestora Social te saluda, te sugiere por dónde empezar y celebra tus avances</div></div>${sw('setBuddy', st.buddy !== false, 'Mostrar asistente')}</div>
     <div class="set-row"><div class="t">Tu nombre</div><input class="input" style="width:180px" data-act="setName" value="${esc(st.name)}" aria-label="Tu nombre"></div></section>
   <section class="panel"><h3>Datos</h3><div class="p-sub">Llévalos a Excel o Power BI, o guarda una copia</div>
     <div class="set-row"><div><div class="t">Exportar a Excel</div><div class="d">Archivo CSV con todas tus tareas, listo para Excel o Power BI</div></div><button class="btn btn-sm" data-act="exportCsv">${ic('download')} Exportar</button></div>
@@ -566,6 +576,7 @@ UI.openEditor = function (task, preset = {}) {
       ${src}
       <div class="field"><label for="edTitle">Título</label><div class="row"><input id="edTitle" class="input title-in grow" value="${esc(t.title)}" placeholder="¿Qué hay que hacer?" autocomplete="off"><button type="button" class="icon-btn" data-act="voice" aria-label="Dictar por voz" title="Dictar: “Informe mañana a las 3 prioridad alta”">${ic('mic')}</button></div><div class="faint" id="voiceHint" style="font-size:12.5px;min-height:16px"></div></div>
       <div class="row"><div class="field grow"><label for="edDate">Fecha límite</label><input type="date" id="edDate" class="input" value="${toDateInput(t.dueAt)}"></div><div class="field grow"><label for="edTime">Hora</label><input type="time" id="edTime" class="input" value="${toTimeInput(t.dueAt)}"></div></div>
+      <details class="more" ${UI.draft.isNew ? '' : 'open'}><summary>Más opciones</summary>
       <div class="row"><div class="field grow"><label for="edCat">Categoría</label><input id="edCat" class="input" list="catList" value="${esc(t.category)}" placeholder="Ej.: Informes, Campo"><datalist id="catList">${cats.map(c => `<option value="${esc(c)}">`).join('')}</datalist></div>
         <div class="field grow"><label for="edDur">Tiempo estimado</label><select id="edDur" class="input">${DURATION_OPTS.map(([v, l]) => `<option value="${v}" ${t.durationMin === v ? 'selected' : ''}>${l}</option>`).join('')}</select></div></div>
       <div class="field"><span class="lbl">Prioridad</span><div id="edPrio">${seg('edPrio', t.priority, [['HIGH', 'Alta'], ['MEDIUM', 'Media'], ['LOW', 'Baja']])}</div></div>
@@ -576,6 +587,7 @@ UI.openEditor = function (task, preset = {}) {
       <div class="field"><span class="lbl">Subtareas</span><div class="subtasks" id="edSubs"></div>
         <div class="row" style="margin-top:6px"><input id="edSubNew" class="input grow" placeholder="Agregar subtarea y presionar Enter"><button type="button" class="btn btn-sm" data-act="subAdd">${ic('plus')}</button></div></div>
       <div class="field"><label for="edNotes">Notas</label><textarea id="edNotes" class="input" rows="4">${esc(t.notes)}</textarea></div>
+      </details>
     </div>
     <div class="drawer-f">${!UI.draft.isNew ? `<button class="btn btn-ghost btn-danger" data-act="delete">${ic('trash')} Eliminar</button>` : ''}<span class="grow"></span><button class="btn" data-act="closeEditor">Cancelar</button><button class="btn-primary" data-act="save">Guardar</button></div>
   </aside>`;
@@ -619,7 +631,8 @@ function saveDraft() {
 
 /* ---------- Voz ---------- */
 function applyVoice(text) {
-  if (!UI.draft || !text) return;
+  if (!text) return;
+  if (!UI.draft) { const ta = document.querySelector('#modal textarea'), qi = document.querySelector('#modal input.title-in') || $('#qaBar') || $('#qnText'); if (ta) ta.value = (ta.value + ' ' + text).trim(); else if (qi) { qi.value = qi.tagName === 'TEXTAREA' ? (qi.value + ' ' + text).trim() : text; qi.dispatchEvent(new Event('input', { bubbles: true })); qi.focus(); } return; }
   const p = parseVoice(text);
   if (p.title) $('#edTitle').value = p.title;
   if (p.priority) { UI.draft.t.priority = p.priority; refreshSeg('edPrio', p.priority); }
@@ -631,7 +644,7 @@ function applyVoice(text) {
     const time = p.when.time ?? (fromInputs($('#edDate').value, $('#edTime').value) - curDay);
     $('#edDate').value = toDateInput(day); $('#edTime').value = toTimeInput(day + time);
   }
-  $('#voiceHint').textContent = `Entendí: “${text}”`;
+  const vh = $('#voiceHint'); if (vh) vh.textContent = `Entendí: “${text}”`;
 }
 function refreshSeg(id, val) { document.querySelectorAll(`#${id} button`).forEach(b => { b.classList.toggle('on', b.dataset.v === val); b.setAttribute('aria-pressed', b.dataset.v === val); }); }
 nativeHandlers.voice = text => applyVoice(text);
@@ -640,9 +653,9 @@ function startVoice() {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SR) return UI.toast('Este navegador no permite dictado. Prueba en Edge o Chrome.');
   const r = new SR(); r.lang = 'es-CO'; r.interimResults = false; r.maxAlternatives = 1;
-  $('#voiceHint').textContent = 'Escuchando… di la tarea, la fecha y la prioridad.';
+  const vh = $('#voiceHint'); if (vh) vh.textContent = 'Escuchando… di la tarea, la fecha y la prioridad.'; else UI.toast('Escuchando…');
   r.onresult = e => applyVoice(e.results[0][0].transcript);
-  r.onerror = () => { $('#voiceHint').textContent = 'No te escuché bien. Intenta de nuevo.'; };
+  r.onerror = () => { const h = $('#voiceHint'); if (h) h.textContent = 'No te escuché bien. Intenta de nuevo.'; else UI.toast('No te escuché bien. Intenta de nuevo.'); };
   r.start();
 }
 
@@ -692,9 +705,17 @@ UI.askFileCode = function (env) {
 /* ================= ACCIONES ================= */
 const ACT = {
   go: el => UI.go(el.dataset.v),
-  buddyNext: el => buddyNext(el),
-  new: () => UI.openEditor(null),
-  newOn: el => { const d = +el.dataset.d; UI.openEditor(null, { dueAt: d + 9 * HOUR }); },
+  new: () => UI.quick(),
+  quickNote: () => openNote(null),
+  voice2: () => startVoice(),
+  qchip: el => { const on = !el.classList.contains('on'); if (el.dataset.q !== 'high') el.parentElement.querySelectorAll('[data-q=today],[data-q=tomorrow]').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); }); el.classList.toggle('on', on); el.setAttribute('aria-pressed', on); },
+  noteOpen: el => openNote(el.dataset.id),
+  notePin: el => { const n = liveNotes().find(x => x.id === el.dataset.id); if (n) commit(() => { n.pinned = !n.pinned; n.updatedAt = Date.now(); }); },
+  noteCopy: el => { const n = liveNotes().find(x => x.id === el.dataset.id); if (n) copyText(n.text).then(() => UI.toast('Nota copiada')); },
+  noteShare: el => { const n = liveNotes().find(x => x.id === el.dataset.id); if (!n) return; if (navigator.share) navigator.share({ text: n.text }).catch(() => { }); else openUrl('https://wa.me/?text=' + encodeURIComponent(n.text)); },
+  noteTask: el => { const n = liveNotes().find(x => x.id === el.dataset.id); if (!n) return; const [first, ...rest] = n.text.split('\n'); UI.openEditor(null, { title: first.slice(0, 120), notes: rest.join('\n').trim() }); },
+  noteDel: el => { const n = liveNotes().find(x => x.id === el.dataset.id); if (n) delNote(n); },
+  newOn: el => { const d = +el.dataset.d; UI.quick({ dueAt: d + 9 * HOUR }); },
   edit: el => { const t = getTask(el.dataset.id); if (t) UI.openEditor(t); },
   toggle: el => {
     const t = getTask(el.dataset.id); if (!t) return;
@@ -702,7 +723,7 @@ const ACT = {
     el.classList.add('pop');
     setTimeout(() => {
       commit(() => setStatus(t, t.status === 'COMPLETED' ? 'PENDING' : 'COMPLETED'));
-      if (t.status === 'COMPLETED') { UI.toast(`“${t.title}” lista`, () => commit(() => { t.status = prev.status; t.completedAt = prev.completedAt; touch(t); })); buddyCelebrate(); }
+      if (t.status === 'COMPLETED') { UI.toast(`“${t.title}” lista`, () => commit(() => { t.status = prev.status; t.completedAt = prev.completedAt; touch(t); })); }
     }, 180);
   },
   statusMenu: el => {
@@ -783,7 +804,6 @@ const CHANGE = {
   setTime: el => { if (el.value) setSetting(el.dataset.k, el.value); },
   setLock: el => setSetting('lockMinutes', +el.value),
   setName: el => setSetting('name', el.value.trim() || 'Heidi'),
-  setBuddy: el => { LS.set('gs.buddy', el.checked); setSetting('buddy', el.checked); },
   setBio: async el => {
     if (el.checked) { try { Native.secretSet('code', S.code); LS.set('gs.bio', true); UI.toast('Huella activada'); } catch { el.checked = false; } }
     else { try { Native.secretSet('code', ''); } catch { } LS.del('gs.bio'); UI.toast('Huella desactivada'); }
@@ -852,7 +872,8 @@ document.addEventListener('keydown', e => {
   if (UI.draft && e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { saveDraft(); return; }
   const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName || '');
   if (!S.unlocked || typing || UI.draft || $('#modal')) return;
-  if (e.key === 'n' || e.key === 'N') { e.preventDefault(); UI.openEditor(null); }
+  if (e.key === 'n' || e.key === 'N') { e.preventDefault(); UI.quick(); }
+  if (e.key === 'm' || e.key === 'M') { e.preventDefault(); openNote(null); }
   if (e.key === '/') { e.preventDefault(); $('#q')?.focus(); }
 });
 ['pointerdown', 'touchstart'].forEach(ev => document.addEventListener(ev, () => { UI.lastAct = Date.now(); }, { passive: true }));
@@ -879,3 +900,115 @@ setInterval(() => { if (S.unlocked && !document.hidden) syncNow(false); }, 12000
   if (!IS_ANDROID && 'serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => { });
   UI.showLock(hasCode() ? 'unlock' : 'create');
 })();
+
+
+/* ================= CAPTURA RÁPIDA DE TAREAS ================= */
+function defaultDue() {
+  const st = S.state.settings, hm = x => { const [h, m] = String(x || '').split(':').map(Number); return ((h || 0) * 60 + (m || 0)) * MIN; };
+  const now = Date.now(), d0 = startOfDay(now);
+  let due = d0 + Math.ceil(((now - d0) + 1) / HOUR) * HOUR;
+  if (due - d0 > hm(st.workEnd || '17:00')) due = addDays(d0, 1) + hm(st.workStart || '07:00') + 2 * HOUR;
+  return due;
+}
+function quickBuild(text, o = {}) {
+  const p = parseVoice(text), now = Date.now(), today = startOfDay(now);
+  let due = o.dueAt || defaultDue();
+  if (o.day === 'today') due = Math.min(today + Math.ceil(((now - today) + 1) / HOUR) * HOUR, today + 23 * HOUR + 59 * MIN);
+  else if (o.day === 'tomorrow') due = addDays(today, 1) + 9 * HOUR;
+  if (p.when) { const dd = p.when.day ?? startOfDay(due), nh = Math.min(today + Math.ceil(((now - today) + 1) / HOUR) * HOUR, today + 23 * HOUR + 59 * MIN) - today, tt = p.when.time ?? (dd === today ? nh : (p.when.day == null ? due - startOfDay(due) : 9 * HOUR)); due = dd + tt; }
+  return { title: p.title || text.trim(), dueAt: due, priority: p.priority || (o.high ? 'HIGH' : 'MEDIUM'), status: p.status || 'PENDING', repeatType: p.repeat || 'NONE' };
+}
+function qOpts(root) {
+  const on = k => root.querySelector(`[data-q=${k}].on`);
+  return { day: on('today') ? 'today' : on('tomorrow') ? 'tomorrow' : null, high: !!on('high') };
+}
+function quickAdd(text, o = {}) {
+  text = (text || '').trim(); if (!text) return false;
+  const b = quickBuild(text, o), now = Date.now();
+  const t = normalizeTask({ id: uid(), ...b, reminders: [30, 60], category: UI.list.cat && UI.list.cat !== '__none' ? UI.list.cat : '', createdAt: now, updatedAt: now });
+  commit(() => { S.state.tasks.push(t); });
+  UI.toast(`Tarea creada · ${fmtDue(t.dueAt)}`, () => commit(() => { t.deleted = true; touch(t); }));
+  return true;
+}
+const QCHIPS = `<div class="chips qchips" role="group" aria-label="Opciones rápidas (opcionales)"><button type="button" class="chip" data-act="qchip" data-q="today" aria-pressed="false">Hoy</button><button type="button" class="chip" data-act="qchip" data-q="tomorrow" aria-pressed="false">Mañana</button><button type="button" class="chip" data-act="qchip" data-q="high" aria-pressed="false">Alta</button></div>`;
+const qaddBar = () => `<form class="qadd" data-qadd autocomplete="off"><div class="qa-row"><input id="qaBar" class="input" placeholder="Escribe una tarea y presiona Enter…  Ej.: Informe mañana a las 3 pm" aria-label="Nueva tarea"><button type="button" class="icon-btn" data-act="voice2" aria-label="Dictar por voz">${ic('mic')}</button><button class="btn-primary" type="submit">${ic('plus')}<span>Agregar</span></button></div>${QCHIPS}</form>`;
+UI.quick = async function (preset = {}) {
+  if (!S.unlocked) return;
+  const p = modal('Nueva tarea', `<div class="row"><input id="qaText" class="input title-in grow" placeholder="¿Qué hay que hacer?" autocomplete="off" value="${esc(preset.title || '')}" aria-label="Tarea"><button type="button" class="icon-btn" data-act="voice2" aria-label="Dictar por voz">${ic('mic')}</button></div>${QCHIPS}<div class="qhint">Escríbela como hablas: “Informe mañana a las 3 pm, urgente”. Lo demás se completa solo.</div>`,
+    [{ label: 'Más opciones', value: 'more' }, { label: 'Agregar', value: 'add', primary: true }]);
+  const inp = $('#qaText'), box = $('#modal');
+  const r = await p, text = inp.value.trim(), o = { ...qOpts(box), dueAt: preset.dueAt };
+  if (r === 'add' && text) quickAdd(text, o);
+  else if (r === 'more') UI.openEditor(null, text ? quickBuild(text, o) : { dueAt: preset.dueAt });
+};
+document.addEventListener('submit', e => {
+  const f = e.target.closest && e.target.closest('[data-qadd]'); if (!f) return;
+  e.preventDefault();
+  const inp = f.querySelector('input'); if (quickAdd(inp.value, qOpts(f))) setTimeout(() => { const n = $('#qaBar'); if (n) n.focus(); }, 30);
+});
+
+/* ================= NOTAS RÁPIDAS ================= */
+const copyText = async txt => {
+  try { await navigator.clipboard.writeText(txt); } catch {
+    const ta = document.createElement('textarea'); ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch { } ta.remove();
+  }
+};
+function addNote(text) { text = (text || '').trim(); if (!text) return false; commit(() => { S.state.notes.push(normalizeNote({ id: uid(), text })); }); return true; }
+function delNote(n) {
+  commit(() => { n.deleted = true; n.updatedAt = Date.now(); });
+  UI.toast('Nota eliminada', () => commit(() => { n.deleted = false; n.updatedAt = Date.now(); }));
+}
+UI.flushNotes = function () {
+  try {
+    if (!S.unlocked || !S.state) return;
+    const mt = document.querySelector('#modal #qnModal'), md = mt && mt.value.trim();
+    if (md) { if (UI._noteEditing) { UI._noteEditing.text = md; UI._noteEditing.updatedAt = Date.now(); } else S.state.notes.push(normalizeNote({ id: uid(), text: md })); }
+    const d = (UI.noteDraft || '').trim(); if (d) S.state.notes.push(normalizeNote({ id: uid(), text: d }));
+    UI.noteDraft = ''; UI._noteEditing = null;
+    if (md || d) { S.state.updatedAt = Date.now(); saveLocal(); }
+  } catch { }
+};
+async function openNote(id) {
+  if (!S.unlocked) return;
+  const n = id ? liveNotes().find(x => x.id === id) : null;
+  UI._noteEditing = n || null;
+  const p = modal(n ? 'Nota' : 'Nota rápida', `<textarea id="qnModal" class="input" rows="9" placeholder="Escribe aquí: datos de una visita, un teléfono, una dirección…" aria-label="Nota">${esc(n ? n.text : '')}</textarea><div class="row nc-row"><button type="button" class="icon-btn" data-act="voice2" aria-label="Dictar por voz">${ic('mic')}</button><span class="grow qhint">Se guarda sola al cerrar, cifrada con tu clave.</span></div>`,
+    [...(n ? [{ label: 'Eliminar', value: 'del', danger: true }] : []), { label: 'Listo', value: 'ok', primary: true }]);
+  const ta = $('#qnModal'); setTimeout(() => ta && ta.focus(), 40);
+  const r = await p; UI._noteEditing = null;
+  const v = ta.value.trim();
+  if (r === 'del' && n) return delNote(n);
+  if (!S.unlocked || !v) return;
+  if (n) { if (n.text !== v) { commit(() => { n.text = v; n.updatedAt = Date.now(); }); UI.toast('Nota guardada'); } }
+  else { addNote(v); UI.toast('Nota guardada'); }
+}
+function noteCard(n) {
+  const share = `<button class="icon-btn" data-act="noteShare" data-id="${n.id}" aria-label="Enviar" title="Enviar">${ic('share')}</button>`;
+  return `<article class="note ${n.pinned ? 'pin' : ''}"><button class="note-body" data-act="noteOpen" data-id="${n.id}" aria-label="Abrir nota">${esc(n.text)}</button>
+    <div class="note-f"><span class="faint">${n.pinned ? 'Fijada · ' : ''}${fmtDue(n.updatedAt)}</span><span class="grow"></span>
+      <button class="icon-btn" data-act="notePin" data-id="${n.id}" aria-label="Fijar" title="${n.pinned ? 'Quitar fijado' : 'Fijar arriba'}">${ic('pin')}</button>
+      <button class="icon-btn" data-act="noteCopy" data-id="${n.id}" aria-label="Copiar" title="Copiar">${ic('copy')}</button>${share}
+      <button class="icon-btn" data-act="noteTask" data-id="${n.id}" aria-label="Convertir en tarea" title="Convertir en tarea">${ic('tasks')}</button>
+      <button class="icon-btn" data-act="noteDel" data-id="${n.id}" aria-label="Eliminar" title="Eliminar">${ic('trash')}</button></div></article>`;
+}
+function viewNotes() {
+  const q = (UI.q || '').toLowerCase(), list = liveNotes().filter(n => !q || n.text.toLowerCase().includes(q));
+  return `<form class="note-compose" data-ncompose><textarea id="qnText" class="input" rows="3" placeholder="Escribe aquí tu nota rápida: datos de una visita, un teléfono, una dirección…" aria-label="Nueva nota">${esc(UI.noteDraft || '')}</textarea>
+    <div class="row nc-row"><button type="button" class="icon-btn" data-act="voice2" aria-label="Dictar por voz">${ic('mic')}</button><span class="grow qhint">Cifrada con tu clave. Si se bloquea la app, no se pierde.</span><button class="btn-primary" type="submit">${ic('plus')}<span>Guardar nota</span></button></div></form>
+    ${list.length ? `<div class="notes-grid">${list.map(noteCard).join('')}</div>` : `<div class="panel empty">${ic('note', 'big')}<h3>${q ? 'Sin resultados' : 'Aquí van tus notas'}</h3><p>${q ? 'No hay notas con esa búsqueda.' : 'Anota datos al vuelo en lugar de mandártelos por WhatsApp. Quedan guardadas, con buscador, y puedes copiarlas o convertirlas en tarea.'}</p></div>`}`;
+}
+document.addEventListener('submit', e => {
+  const f = e.target.closest && e.target.closest('[data-ncompose]'); if (!f) return;
+  e.preventDefault(); const ta = f.querySelector('textarea');
+  if (addNote(ta.value)) { UI.noteDraft = ''; UI.toast('Nota guardada'); }
+});
+document.addEventListener('input', e => { if (e.target && e.target.id === 'qnText') UI.noteDraft = e.target.value; });
+document.addEventListener('keydown', e => { if (e.target && e.target.id === 'qnText' && e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); e.target.form.requestSubmit(); } });
+
+/* ================= ENCABEZADO DEL TABLERO ================= */
+function heroHtml() {
+  const open = liveTasks().filter(isOpen), od = open.filter(t => isOverdue(t)).length, d0 = startOfDay(Date.now());
+  const hoy = open.filter(t => startOfDay(t.dueAt) === d0).length;
+  const msg = od ? `${od} vencida${od > 1 ? 's' : ''} · ${hoy} para hoy` : hoy ? `${hoy} para hoy` : 'Nada pendiente para hoy';
+  return `<section class="hero">${gsScene('dash', 'hero-svg')}<div class="hero-tx"><h1 class="greet">${greeting()}, ${esc(S.state.settings.name)}</h1><div class="greet-sub">${fmtLongDate(Date.now())} · ${msg}</div></div></section>`;
+}

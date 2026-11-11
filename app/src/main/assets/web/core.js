@@ -71,9 +71,14 @@ const S = {
 };
 
 function defaultSettings() {
-  return { name: 'Heidi', buddy: true, planEnabled: true, planTime: '06:30', workStart: '07:00', workEnd: '17:00', theme: 'auto', lockMinutes: 5, updatedAt: 0 };
+  return { name: 'Heidi', planEnabled: true, planTime: '06:30', workStart: '07:00', workEnd: '17:00', theme: 'auto', lockMinutes: 5, updatedAt: 0 };
 }
-function defaultState() { return { v: 1, tasks: [], settings: defaultSettings(), inboxDone: [], updatedAt: Date.now() }; }
+function defaultState() { return { v: 1, tasks: [], notes: [], settings: defaultSettings(), inboxDone: [], updatedAt: Date.now() }; }
+function normalizeNote(n) {
+  const now = Date.now();
+  return { id: String(n.id ?? uid()), text: String(n.text ?? ''), pinned: !!n.pinned, createdAt: Number(n.createdAt) || now, updatedAt: Number(n.updatedAt) || now, deleted: !!n.deleted };
+}
+const liveNotes = () => (S.state.notes || []).filter(n => !n.deleted).sort((a, b) => (b.pinned - a.pinned) || (b.updatedAt - a.updatedAt));
 
 function normalizeTask(t) {
   const now = Date.now();
@@ -96,6 +101,7 @@ function normalizeState(s) {
   return {
     v: 1,
     tasks: Array.isArray(s.tasks) ? s.tasks.map(normalizeTask) : [],
+    notes: Array.isArray(s.notes) ? s.notes.map(normalizeNote) : [],
     settings: Object.assign(defaultSettings(), s.settings || {}),
     inboxDone: Array.isArray(s.inboxDone) ? s.inboxDone.slice(-500) : [],
     updatedAt: Number(s.updatedAt) || Date.now(),
@@ -211,9 +217,12 @@ function mergeStates(a, b) {
   const tasks = [...map.values()].filter(t => !(t.deleted && t.updatedAt < cutoff));
   const settings = (b.settings.updatedAt || 0) > (a.settings.updatedAt || 0) ? b.settings : a.settings;
   const inboxDone = [...new Set([...a.inboxDone, ...b.inboxDone])].slice(-500);
-  return { v: 1, tasks, settings, inboxDone, updatedAt: Math.max(a.updatedAt, b.updatedAt) };
+  const nmap = new Map();
+  for (const n of [...(a.notes || []), ...(b.notes || [])]) { const cur = nmap.get(n.id); if (!cur || n.updatedAt > cur.updatedAt) nmap.set(n.id, n); }
+  const notes = [...nmap.values()].filter(n => !(n.deleted && n.updatedAt < cutoff));
+  return { v: 1, tasks, notes, settings, inboxDone, updatedAt: Math.max(a.updatedAt, b.updatedAt) };
 }
-const fingerprint = s => JSON.stringify([...s.tasks].sort((x, y) => x.id < y.id ? -1 : 1).map(t => [t.id, t.updatedAt]).concat([s.settings.updatedAt, s.inboxDone.length]));
+const fingerprint = s => JSON.stringify([...s.tasks].sort((x, y) => x.id < y.id ? -1 : 1).map(t => [t.id, t.updatedAt]).concat([s.settings.updatedAt, s.inboxDone.length], [...(s.notes || [])].sort((x, y) => x.id < y.id ? -1 : 1).map(n => [n.id, n.updatedAt])));
 
 function setSync(status, label) { S.sync.status = status; S.sync.label = label; UI.renderSyncBadge(); }
 function syncConnected() {

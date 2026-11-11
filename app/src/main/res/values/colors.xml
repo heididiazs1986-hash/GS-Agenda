@@ -1,5 +1,5 @@
 <resources>
-    <color name="gs_surface">#F9F9F9</color>
-    <color name="gs_primary">#006686</color>
+    <color name="gs_surface">#FEFEFF</color>
+    <color name="gs_primary">#FF6600</color>
     <color name="gs_ice">#7DD3FC</color>
 </resources>

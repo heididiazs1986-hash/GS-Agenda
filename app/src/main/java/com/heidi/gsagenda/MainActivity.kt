@@ -46,7 +46,7 @@ class MainActivity : Activity() {
     companion object {
         private const val HOST = "appassets.androidplatform.net"
         private const val ORIGIN = "https://$HOST"
-        private const val NAVY = "#F9F9F9"
+        private const val NAVY = "#FEFEFF"
         private const val RC_VOICE = 11
         private const val RC_OPEN_SYNC = 12
         private const val RC_CREATE_SYNC = 13
