@@ -594,6 +594,7 @@ function viewSettings() {
     <div class="set-row"><div><div class="t">Copia de seguridad</div><div class="d">Archivo cifrado con tu clave</div></div><button class="btn btn-sm" data-act="backup">${ic('download')} Guardar copia</button></div>
     <div class="set-row"><div><div class="t">Restaurar copia</div><div class="d">Se combina con tus tareas actuales, no las reemplaza</div></div><button class="btn btn-sm" data-act="restore">${ic('upload')} Restaurar</button></div>
     <div class="set-row"><div><div class="t">Importar tareas</div><div class="d">Carga un archivo CSV o JSON, por ejemplo tu plan de estudio</div></div><button class="btn btn-sm" data-act="importar">${ic('upload')} Importar</button></div>
+    <div class="set-row"><div><div class="t">Chat de WhatsApp</div><div class="d">Carga un chat exportado (.txt) y mira qué mensajes quedaron sin responder</div></div><button class="btn btn-sm" data-act="whatsapp">${ic('upload')} Analizar</button></div>
     <input type="file" id="restoreFile" accept=".datos,.json,application/json" class="hidden"></section>
   </div>`;
 }
