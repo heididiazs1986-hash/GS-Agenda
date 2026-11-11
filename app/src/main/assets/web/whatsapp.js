@@ -93,8 +93,9 @@
       ...(pend.length ? [{ label: 'Crear tareas', value: 'tasks', primary: true, check: async m => { sel = [...m.querySelectorAll('[data-wa]')].filter(c => c.checked).map(c => shown[+c.dataset.wa]); if (!sel.length) { UI.toast('Marca al menos un mensaje'); return false; } return true; } }] : []),
     ]);
     if (act === 'csv') {
-      const head = ['Fecha', 'Hora', 'De', 'Mensaje', 'Tipo', 'Estado', 'Urgente', 'Mi respuesta (fecha)', 'Mi respuesta', 'Demora (min)'];
-      const rows = res.map(r => [new Date(r.ts).toLocaleDateString('es-CO'), new Date(r.ts).toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' }), r.who, r.text, r.kind, r.estado, r.urgent ? 'Sí' : '', r.reply ? new Date(r.reply.ts).toLocaleString('es-CO') : '', r.reply ? r.reply.text : '', r.delayMin ?? '']);
+      const dt = ts => new Date(ts).toLocaleDateString('es-CO'), hm = ts => new Date(ts).toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' });
+      const head = ['Fecha recibido', 'Hora recibido', 'De', 'Mensaje recibido', '¿Respondí?', 'Fecha respuesta', 'Hora respuesta', 'Demora (min)'];
+      const rows = res.map(r => [dt(r.ts), hm(r.ts), r.who, r.text, r.reply ? 'Sí' : 'No', r.reply ? dt(r.reply.ts) : '', r.reply ? hm(r.reply.ts) : '', r.delayMin ?? '']);
       downloadText(`WhatsApp-pendientes-${toDateInput(Date.now())}.csv`, 'text/csv', '﻿' + [head, ...rows].map(r => r.map(csvCell).join(';')).join('\r\n'));
     } else if (act === 'tasks') {
       const now = Date.now(); let added = 0;
