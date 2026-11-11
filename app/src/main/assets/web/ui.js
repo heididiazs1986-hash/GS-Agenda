@@ -686,7 +686,10 @@ function applyVoice(text) {
   const vh = $('#voiceHint'); if (vh) vh.textContent = `Entendí: “${text}”`;
 }
 function refreshSeg(id, val) { document.querySelectorAll(`#${id} button`).forEach(b => { b.classList.toggle('on', b.dataset.v === val); b.setAttribute('aria-pressed', b.dataset.v === val); }); }
-nativeHandlers.voice = text => applyVoice(text);
+/* Dictado en campos de texto (notas): en el APK no existe SpeechRecognition, se usa el dictado de Android y el texto llega por aquí */
+let voiceInsert = null;
+if (IS_ANDROID) window.GS_VOZ_NATIVE = { start(cb) { voiceInsert = cb; try { Native.startVoice(); } catch { voiceInsert = null; UI.toast('El dictado no está disponible'); } } };
+nativeHandlers.voice = text => { if (voiceInsert) { const cb = voiceInsert; voiceInsert = null; cb(text); } else applyVoice(text); };
 function startVoice() {
   if (IS_ANDROID) { try { Native.startVoice(); } catch { UI.toast('El dictado no está disponible'); } return; }
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
